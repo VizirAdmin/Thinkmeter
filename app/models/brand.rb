@@ -4,6 +4,7 @@ class Brand < ActiveRecord::Base
   has_many :messages, :through => :messages_brands
   has_many :opinions, :through => :brands_opinions
   
-  INVALID = 0
+  INITIAL = 0
   VALID = 1
+  INVALID = 2
 end

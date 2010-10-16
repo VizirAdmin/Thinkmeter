@@ -20,7 +20,7 @@ private
         :site => "", 
         :description => "", 
         :twitter_profile => "", 
-        :status => Brand::INVALID
+        :status => Brand::INITIAL
       ) if !brand
       
       brand
