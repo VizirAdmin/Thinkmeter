@@ -3,9 +3,12 @@ class Message < ActiveRecord::Base
   PROCESSING = 1
   PROCESSED = 2
   ERROR = 3
-  
+
   def before_create
     m = Message.first :conditions => ["twitter_id = ?", self.twitter_id]
+    if m.nil?
+      self.html_text=check_text_for_urls
+    end
     m.nil?
   end
 
@@ -17,6 +20,9 @@ class Message < ActiveRecord::Base
     m
   end
 
+  def check_text_for_urls
+    self.text.gsub(/(http:\/\/[A-Za-z0-9\.\/\-\%\?\&_]+)/, '<a href="\1" target="blank">\1</a>').gsub(/@([A-Za-z0-9_]+)/, '<a href="http://twitter.com/\1" target="blank">@\1</a>').gsub(/#([A-Za-z0-9_]+)/, '<a href="http://search.twitter.com/search?q=#\1" target="blank">#\1</a>')
+  end
 
 end
 
