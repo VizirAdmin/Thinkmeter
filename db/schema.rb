@@ -9,7 +9,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101016022146) do
+ActiveRecord::Schema.define(:version => 20101016025543) do
+
+  create_table "messages", :force => true do |t|
+    t.string   "from_user"
+    t.integer  "from_user_id"
+    t.string   "geo"
+    t.integer  "twitter_id",      :limit => 8,                 :null => false
+    t.string   "language_code"
+    t.string   "profile_img_url"
+    t.string   "source"
+    t.string   "text"
+    t.string   "to_user"
+    t.integer  "to_user_id"
+    t.integer  "status",                       :default => -1
+    t.datetime "created_at"
+    t.integer  "recent_retweets"
+    t.string   "result_type"
+    t.datetime "updated_at"
+  end
 
   create_table "searches", :force => true do |t|
     t.integer  "last_tweet_id", :limit => 8, :null => false

@@ -7,7 +7,7 @@ class SearchWorker
   end
 
   def get_tweets(last_tweet_id)
-    @twitter.search("#IThink")
+    @twitter.search("#IThink",last_tweet_id)
   end
 
   def add_search_to_database
@@ -37,7 +37,7 @@ class SearchWorker
 
   def add_page_to_database(page)
     page.each do |msg|
-      db_msg  =  add_message_to_database(search,msg)
+      db_msg  =  add_message_to_database(msg)
     end
   end
 

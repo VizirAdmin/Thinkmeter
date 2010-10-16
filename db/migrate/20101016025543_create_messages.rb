@@ -18,8 +18,8 @@ class CreateMessages < ActiveRecord::Migration
       t.timestamps
     end
     execute("ALTER TABLE messages MODIFY COLUMN twitter_id BIGINT NOT NULL")
-    t.timestamps
-    end
+
+
   end
 
   def self.down
