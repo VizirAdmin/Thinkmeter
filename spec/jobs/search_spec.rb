@@ -16,13 +16,13 @@ describe SearchWorker do
     result.first.id.should > 0
   end
 
-  it "adicionar todos os tweets no banco - busca maior" do
-    @search.last_tweet_id=3
-    @search.save
-    s = SearchWorker.new()
-    result_size = s.add_search_to_database()
-    Message.all.size.should == result_size
-  end
+  # it "adicionar todos os tweets no banco - busca maior" do
+  #   @search.last_tweet_id=3
+  #   @search.save
+  #   s = SearchWorker.new()
+  #   result_size = s.add_search_to_database()
+  #   Message.all.size.should == result_size
+  # end
 
 end
 
