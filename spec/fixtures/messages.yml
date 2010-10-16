@@ -16,6 +16,22 @@ good_cleo:
   text: "jksakjhdcjkbcdsa sjsagd #ithink cleopires uma delicia"
   status: 0
 
+good_cleo2:
+  twitter_id: 2234560000
+  from_user: "aaa"
+  from_user_id: 1
+  language_code: "pt"
+  text: "RT @zzz jksakjhdcjkbcdsa sjsagd #ithink cleopires uma delicia"
+  status: 0
+  
+very_good_cleo:
+  twitter_id: 2234560001
+  from_user: "zzz"
+  from_user_id: 1
+  language_code: "pt"
+  text: "jksakjhdcjkbcdsa sjsagd #ithink cleopires gostosa pra cacete"
+  status: 0
+
 bad_locaweb:
   twitter_id: 1234560004
   from_user: "bbb"
@@ -55,3 +71,30 @@ names_with_accents:
   language_code: "en"
   text: "#ithink brãndwithácçénts préatyçôõl"
   status: 0
+
+
+# Massa de dados
+message001:
+  twitter_id: 1111110001
+  from_user: "fulano"
+  from_user_id: 1
+  language_code: "en"
+  text: "#ithink apple cool"
+  status: 0
+
+message002:
+  twitter_id: 1111110002
+  from_user: "ciclano"
+  from_user_id: 1
+  language_code: "en"
+  text: "#ithink apple good"
+  status: 0
+
+message003:
+  twitter_id: 1111110003
+  from_user: "beltrano"
+  from_user_id: 1
+  language_code: "en"
+  text: "#ithink apple evil"
+  status: 0
+

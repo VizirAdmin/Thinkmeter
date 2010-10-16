@@ -1,0 +1,17 @@
+<ul id="brands_list">
+  <%@brands.each do |brand|%>
+    <li id="brand_item_<%= brand.id %>" class="brand_item">
+      <span id="brand_title"> <%= brand.name%>&nbsp;&nbsp;</span> 
+      <span id="brand_text">
+        Site:<%= brand.site.size > 0 ? brand.site : 'none'%>, 
+        Description:<%= brand.description.size > 0 ? brand.description : 'none'%>, 
+        Twitter:<%= brand.twitter_profile.size > 0 ? brand.twitter_profile : 'none'%>
+      </span>
+      <div id="brand_commands">
+        <%= link_to "Edit", edit_brand_path(brand) %>
+        <%= link_to_remote "Validate", :url => { :controller => "brands", :action => "validate", :id=> brand.id} %>
+        <%= link_to_remote "Invalidate", :url => { :controller => "brands", :action => "invalidate", :id=> brand.id} %>
+      </div>
+    </li>
+  <%end%>
+</ul>

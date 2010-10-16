@@ -2,7 +2,8 @@ module Parser
   
   class Twitter
     # TODO parametrizar ou aceitar varios tokens: #ithink, #euacho etc
-    REGEXP = /^.*\#ithink ([a-zA-Z0-9áàãâéèêíìîòóõôùúçÁÀÃÂÉÈÊÍÌÎÒÓÕÔÙÚÇ\`\~\!\@\#\$\%\^\&\*\(\)\-\_\+\=\{\}\'\<\>\?\/]+) (.*)/
+    REGEXP = /^.*\#ithink ([a-zA-Z0-9áàãâéèêíìîòóõôùúçÁÀÃÂÉÈÊÍÌÎÒÓÕÔÙÚÇ
+              \`\~\!\@\#\$\%\^\&\*\(\)\-\_\+\=\{\}\'\<\>\?\/]+) (.*)/
     
     # This characters will be removed from Brand and Option names
     SPECIAL_CHARS_REMOVE = ["&","?"]
@@ -24,7 +25,7 @@ private
         :site => "", 
         :description => "", 
         :twitter_profile => "", 
-        :status => Brand::INVALID
+        :status => Brand::INITIAL
       ) if !brand
       
       brand

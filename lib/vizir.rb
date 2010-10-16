@@ -31,17 +31,46 @@ module Vizir
     end
 
 private
-  def build_params(next_page,query,rpp)
-    hash_params = {}
-    params = next_page.split("&")
-    params.each do |p|
-      op = p.split("=")
-      hash_params[op[0]]=op[1]
+    def build_params(next_page,query,rpp)
+      hash_params = {}
+      params = next_page.split("&")
+      params.each do |p|
+        op = p.split("=")
+        hash_params[op[0]]=op[1]
+      end
+      hash_params["q"]=query
+      hash_params["rpp"]=rpp
+      hash_params
     end
-    hash_params["q"]=query
-    hash_params["rpp"]=rpp
-    hash_params
   end
-end
+
+  class ActsAsTag
+    
+    def self.friendly_tags(tags)
+      array = []
+      tags.each {|tag| array << {:tag => tag.name,:class => tag_class(tag.total.to_i)}}
+      array
+    end
+    
+    def self.tag_class(total)
+       @divisor ||= total.div 6
+       result = if @divisor > 6; total.div @divisor; else; total; end
+       case result
+         when 1
+           "not-popular"
+         when 2
+           "not-very-popular"
+         when 3
+           "somewhat-popular"
+         when 4
+           "popular"
+         when 5
+           "very-popular"
+         when 6
+           "ultra-popular"
+       end
+    end
+  end
+
 end
 
