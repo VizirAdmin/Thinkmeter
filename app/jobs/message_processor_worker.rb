@@ -24,5 +24,6 @@ class MessageProcessorWorker
   def associate_opinion_to_brand(mesage, brand, opinion)
     MessagesBrand.create(:message_id => message.id, :brand_id => brand.id)
     MessagesOpinion.create(:message_id => message.id, :opinion_id => opinion.id)
+    BrandsOpinion.create(:brand_id => brand_id, :opinion_id => opinion.id)
   end
 end

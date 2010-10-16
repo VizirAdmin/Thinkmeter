@@ -96,6 +96,12 @@ ruimpracacete:
   classification: 0
   language_code: "pt"
 
+umabosta:
+  name: "uma bosta"
+  expression: "uma bosta, umabosta"
+  classification: 0
+  language_code: "pt"
+
 meiaboca:
   name: "meia boca"
   expression: "meia boca, meiaboca"

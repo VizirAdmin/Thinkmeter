@@ -9,3 +9,18 @@
 #
 #two: {}
 #  column: value
+
+001:
+  from_user: "antonioams"
+  from_user_id: 1
+  language_code: "pt"
+  text: "jksakjhdcjkbcdsa sjsagd #euacho A Cleo Pires uma delicia"
+  status: 0
+
+002:
+  from_user: "antonioams"
+  from_user_id: 1
+  language_code: "pt"
+  text: "jksakjhdcjkbcdsa sjsagd #euacho A Locaweb uma bosta"
+  status: 0
+

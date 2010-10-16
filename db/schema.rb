@@ -9,7 +9,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101016043024) do
+ActiveRecord::Schema.define(:version => 20101016045743) do
+
+  create_table "brands", :force => true do |t|
+    t.string   "name"
+    t.string   "site"
+    t.string   "description"
+    t.string   "twitter_profile"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "brands_opinions", :force => true do |t|
+    t.integer  "brand_id"
+    t.integer  "opinion_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "messages", :force => true do |t|
     t.string   "from_user"
@@ -26,6 +42,20 @@ ActiveRecord::Schema.define(:version => 20101016043024) do
     t.datetime "created_at"
     t.integer  "recent_retweets"
     t.string   "result_type"
+    t.datetime "updated_at"
+  end
+
+  create_table "messages_brands", :force => true do |t|
+    t.integer  "message_id"
+    t.integer  "brand_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messages_opinions", :force => true do |t|
+    t.integer  "message_id"
+    t.integer  "opinion_id"
+    t.datetime "created_at"
     t.datetime "updated_at"
   end
 
