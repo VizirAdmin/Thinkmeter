@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(:version => 20101016140333) do
     t.datetime "updated_at"
   end
 
+  create_table "expressions", :force => true do |t|
+    t.integer  "opinion_id"
+    t.string   "expression"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "messages", :force => true do |t|
     t.string   "from_user"
     t.integer  "from_user_id"
@@ -59,13 +66,6 @@ ActiveRecord::Schema.define(:version => 20101016140333) do
   create_table "messages_opinions", :force => true do |t|
     t.integer  "message_id"
     t.integer  "opinion_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "opinion_expressions", :force => true do |t|
-    t.integer  "opinion_id"
-    t.string   "expression"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

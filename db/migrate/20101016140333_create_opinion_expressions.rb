@@ -1,6 +1,6 @@
 class CreateOpinionExpressions < ActiveRecord::Migration
   def self.up
-    create_table :opinion_expressions do |t|
+    create_table :expressions do |t|
       t.integer :opinion_id
       t.string :expression
 

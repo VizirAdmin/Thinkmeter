@@ -20,9 +20,13 @@ private
     end
     
     def Twitter.get_opinion(expression)
-      opinion = Opinion.find_by_name(expression)
-      opinion = Opinion.create(:name => expression, :expression => expression, 
-                              :language_code => "", :classification => Opinion::UNCLASSIFIED) if opinion.nil?
+      opexp = OpinionExpression.find_by_expression(expression, :include => [:opinion])
+      if(opexp.nil?)      
+        opinion = Opinion.create(:name => expression, :expression => expression, 
+                                :language_code => "", :classification => Opinion::UNCLASSIFIED)
+        opexp = OpinionExpression.create(:expression => expression, opinion => opnion)
+      end
+                            
       opinion
     end
   end
