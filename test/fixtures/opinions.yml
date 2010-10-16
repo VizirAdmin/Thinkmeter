@@ -67,7 +67,7 @@ delicia:
   language_code: "pt"
 
 deliciosa:
-  name:"deliciosa"
+  name: "deliciosa"
   expression: "deliciosa"
   classification: 0
   language_code: "pt"
