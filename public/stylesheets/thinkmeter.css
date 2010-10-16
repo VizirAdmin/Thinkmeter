@@ -203,3 +203,9 @@ margin-right:2px;
 #tm .tag_cloud .ultra-popular { font-size: 2.2em; }
     
 /***** end - tag_cloud *****/
+
+/***** begin - brand_validation *****/
+
+#tm #brands_list{float:left;clear:both;}
+
+/***** end - brand_validation *****/
