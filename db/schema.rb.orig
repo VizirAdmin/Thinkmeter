@@ -10,10 +10,29 @@
 # It's strongly recommended to check this file into your version control system.
 
 <<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20101016030540) do
+ActiveRecord::Schema.define(:version => 20101016045743) do
 =======
-ActiveRecord::Schema.define(:version => 20101016025543) do
->>>>>>> d9abeb6c61987e8b409612d95042e3f435b949f1
+ActiveRecord::Schema.define(:version => 20101016044131) do
+>>>>>>> 38ba49f493ae941146f5985a2cab1dcbde8d1458
+
+  create_table "brands", :force => true do |t|
+    t.string   "name"
+    t.string   "site"
+    t.string   "description"
+    t.string   "twitter_profile"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+<<<<<<< HEAD
+
+  create_table "brands_opinions", :force => true do |t|
+    t.integer  "brand_id"
+    t.integer  "opinion_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+=======
+>>>>>>> 38ba49f493ae941146f5985a2cab1dcbde8d1458
 
   create_table "messages", :force => true do |t|
     t.string   "from_user"
@@ -32,7 +51,20 @@ ActiveRecord::Schema.define(:version => 20101016025543) do
     t.string   "result_type"
     t.datetime "updated_at"
   end
-<<<<<<< HEAD
+
+  create_table "messages_brands", :force => true do |t|
+    t.integer  "message_id"
+    t.integer  "brand_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messages_opinions", :force => true do |t|
+    t.integer  "message_id"
+    t.integer  "opinion_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "opinions", :force => true do |t|
     t.string   "name"
@@ -42,11 +74,18 @@ ActiveRecord::Schema.define(:version => 20101016025543) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-=======
->>>>>>> d9abeb6c61987e8b409612d95042e3f435b949f1
 
   create_table "searches", :force => true do |t|
     t.integer  "last_tweet_id", :limit => 8, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "searchlogs", :force => true do |t|
+    t.datetime "date_start"
+    t.datetime "date_end"
+    t.integer  "count"
+    t.integer  "rc"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
