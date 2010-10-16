@@ -9,7 +9,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20101016030540) do
+=======
+ActiveRecord::Schema.define(:version => 20101016025543) do
+>>>>>>> d9abeb6c61987e8b409612d95042e3f435b949f1
 
   create_table "messages", :force => true do |t|
     t.string   "from_user"
@@ -28,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20101016030540) do
     t.string   "result_type"
     t.datetime "updated_at"
   end
+<<<<<<< HEAD
 
   create_table "opinions", :force => true do |t|
     t.string   "name"
@@ -37,6 +42,8 @@ ActiveRecord::Schema.define(:version => 20101016030540) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+=======
+>>>>>>> d9abeb6c61987e8b409612d95042e3f435b949f1
 
   create_table "searches", :force => true do |t|
     t.integer  "last_tweet_id", :limit => 8, :null => false
