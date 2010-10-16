@@ -49,7 +49,7 @@ private
     def Twitter.sanitize(name)
       name.downcase!
       SPECIAL_CHARS_REMOVE.each do |char|
-        name.sub!(char,"")
+        name.gsub!(char,"")
       end
       name.remover_acentos!
       name
