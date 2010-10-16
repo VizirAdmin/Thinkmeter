@@ -13,7 +13,13 @@ namespace :ithink do
     task :search do
       sw=SearchWorker.new
       puts "Vai procurar no Twitter"
+      log=Searchlog.new
+      log.date_start = Time.now
       total = sw.add_search_to_database
+      log.date_end = Time.now
+      log.rc=0
+      log.count = total
+      log.save
       puts "Encontrou #{total} registros"
     end
   end
