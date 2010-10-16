@@ -1,32 +1,39 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
+<<<<<<< HEAD
 ducaralho:
   name: "do caralho"
+  expression: "ducaralho, do caralho, du caralho, do caralho"
   classification: 0
   language_code: "pt"
 
 bom:
   name: "bom"
+  expression: "bom"
   classification: 0
   language_code: "pt"
 
 muitobom:
   name: "muito bom"
+  expression: "muito bom, muitobom"
   classification: 0
   language_code: "pt"
 
 bompracacete:
   name: "bom pra cacete"
+  expression: "bom pra cacete, bompracacete, bom pracacete, bompra cacete"
   classification: 0
   language_code: "pt"
 
 boa:
   name: "boa"
+  expression: "boa"
   classification: 0
   language_code: "pt"
 
 muitoboa:
   name: "muito boa"
+  expression: "muito boa, muitoboa"
   classification: 0
   language_code: "pt"
 
@@ -120,3 +127,5 @@ tosquissimo:
   classification: 0
   language_code: "pt"
 
+=======
+>>>>>>> 4c63062e7ba78d4521773b6e92b0e39d5d94f644

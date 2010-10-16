@@ -16,5 +16,8 @@ config.action_controller.perform_caching             = false
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
 
+<<<<<<< HEAD
 #config.thinkmeter.token = "euacho"
 
+=======
+>>>>>>> 4c63062e7ba78d4521773b6e92b0e39d5d94f644

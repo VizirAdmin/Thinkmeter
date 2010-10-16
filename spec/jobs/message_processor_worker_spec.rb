@@ -20,4 +20,15 @@ describe MessageProcessorWorker do
     lb.messages.size.should be 1
   end
   
+  
+  it "process messages verify is adds the non existent brands and opinions" do
+    mpw = MessageProcessorWorker.new()
+    mpw.perform
+    b = Brand.find_by_name("patata")
+    b.nil?.should be false
+    b.status.should be Brand::INVALID
+    o = Opinion.find_by_name("uma desgraça")
+    o.nil?.should be false
+    o.classification.should be Opinion::UNCLASSIFIED
+  end
 end
