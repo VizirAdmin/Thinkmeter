@@ -21,9 +21,24 @@
 </div>
 <div id="right_painel" style="height:500px;">
   <div class="title">STATS</div>
-  <div class="stat_number">5 millions</div>
-  <div class="stat_desc">tweets</div>
-  <div class="title">MESSAGES</div>
+  <BR>
+  <table class="thinkmeter_stats">
+  <tbody>
+  <tr>
+    <td>
+      5000000
+      <span class="stats_count"><a href="" target="blank">tweets</a></span>
+    </td>
+    <td>
+      500
+      <span class="stats_count"><a href="" target="blank">brands</a></span>
+    </td>
+    <td>
+      630
+      <span class="stats_count"><span class="stats_count"><a href="" target="blank">opinions</a></span>
+    </span></td>
+  </tr>
+</tbody></table>
   <div id="last_messages">
     <ul>
       <%@messages.each do |message|%>
@@ -55,3 +70,4 @@
     </div>
   </div>
 </div>
+
