@@ -28,9 +28,9 @@ describe MessageProcessorWorker do
     b = Brand.find_by_name("patata")
     b.should_not be_nil
     b.status.should be Brand::INVALID
-    o = Opinion.find_by_name("uma desgraça", :include => [:expressions])
+    o = Opinion.find_by_name("uma desgraca", :include => [:expressions])
     o.nil?.should be false
     o.classification.should be Opinion::UNCLASSIFIED
-    o.expressions[0].expression.should == "uma desgraça"
+    o.expressions[0].expression.should == "uma desgraca"
   end
 end

@@ -39,3 +39,54 @@ new_brand_and_opinion:
   language_code: "pt"
   text: "jksakjhdcjkbcdsa sjsagd #ithink patata uma desgraça"
   status: 0  
+
+mixed_case_names:
+  twitter_id: 1234560006
+  from_user: "bbb"
+  from_user_id: 1
+  language_code: "en"
+  text: "#ithink MixedCaseBrandName PreatyCool"
+  status: 0
+  
+special_chars_names:
+  twitter_id: 1234560007
+  from_user: "bbb"
+  from_user_id: 1
+  language_code: "en"
+  text: "#ithink special&chars?brandname preaty&cool"
+  status: 0
+
+names_with_accents:
+  twitter_id: 1234560008
+  from_user: "bbb"
+  from_user_id: 1
+  language_code: "en"
+  text: "#ithink brãndwithácçénts préatyçôõl"
+  status: 0
+
+
+# Massa de dados
+message001:
+  twitter_id: 1111110001
+  from_user: "fulano"
+  from_user_id: 1
+  language_code: "en"
+  text: "#ithink apple cool"
+  status: 0
+
+message002:
+  twitter_id: 1111110002
+  from_user: "ciclano"
+  from_user_id: 1
+  language_code: "en"
+  text: "#ithink apple good"
+  status: 0
+
+message003:
+  twitter_id: 1111110003
+  from_user: "beltrano"
+  from_user_id: 1
+  language_code: "en"
+  text: "#ithink apple evil"
+  status: 0
+
