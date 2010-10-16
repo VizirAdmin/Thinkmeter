@@ -8,7 +8,7 @@ describe Parser::Twitter do
     true.should be_true
   end
   
-  it "deve retornar [nil,nil] ao parsear uma mensagem mal formatada" do
+  it "deve retornar [nil,nil] para uma mensagem mal formatada" do
     brand, opinion = Parser::Twitter.parse messages(:bad_message)
     brand.should be_nil
     opinion.should be_nil
