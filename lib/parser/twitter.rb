@@ -35,8 +35,10 @@ private
           :language_code => "", 
           :classification => Opinion::UNCLASSIFIED
         )
-        Expression.new(:expression => expression, :opinion => opinion)
+      else
+        opinion = opexp.opinion
       end
+      
       opinion
     end
   end
