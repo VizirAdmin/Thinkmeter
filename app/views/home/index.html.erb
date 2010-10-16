@@ -1,13 +1,32 @@
 <div id="container" style="height:300px;">
   <div class="title">BRANDS</div>
   <div id="brands_tags">
-    <%(1..150).each do |i|%>
-      #iThink
-    <%end%>
+    <ol class="tag_cloud">
+      <%=list_tags(@brands)%>
+    </ol>
   </div>
 </div>
 <div id="right_painel" style="height:500px;">
   <div class="title">STATS</div>
   <div class="stat_number">5 millions</div>
   <div class="stat_desc">tweets</div>
+</div>
+
+<div id="home_chart">
+  <div id="positives" style="height:<%="#{210}"%>px;">
+    <div class="chart_title">70%</div>
+    <div class="opinions_tags">
+      <ol class="tag_cloud">
+        <%=list_tags(@opinions_positives)%>
+      </ol>
+    </div>
+  </div>
+  <div id="negatives" style="height:<%="#{90}"%>px;">
+    <div class="chart_title">30%</div>
+    <div class="opinions_tags">
+      <ol class="tag_cloud">
+        <%=list_tags(@opinions_negatives)%>
+      </ol>
+    </div>
+  </div>
 </div>
