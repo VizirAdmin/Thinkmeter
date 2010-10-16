@@ -1,0 +1,92 @@
+body {
+  background:#C3FF68;
+	margin: 0;
+}
+
+#tm #logo{
+  float:left;
+  margin:5px 0 5px 1%;
+}
+
+/***** begin - container *****/
+#tm #container{
+  border-radius:6px 6px 6px 6px;
+  box-shadow:0 1px 2px rgba(51, 51, 51, 0.3);
+  -o-border-radius:6px 6px 6px 6px;
+  -o-box-shadow:0 1px 2px rgba(51, 51, 51, 0.3);
+  -webkit-border-radius:6px 6px 6px 6px;
+  -webkit-box-shadow:0 1px 2px rgba(51, 51, 51, 0.3);
+  -moz-border-radius:6px 6px 6px 6px;
+  -moz-box-shadow:0 1px 2px rgba(51, 51, 51, 0.3);
+  background-color:#fff;
+  float:left;
+  width:72%;
+  clear:left;
+  margin:0 0 0 1%;
+  padding-top:6px;
+}
+
+#tm #brands_tags{
+  clear:both;
+  float:left;
+  margin:10px 5px 10px 10px;
+}
+
+/***** end - container *****/
+
+/***** begin - right_painel *****/
+#tm #right_painel{
+  border-radius:6px 6px 6px 6px;
+  box-shadow:0 1px 2px rgba(51, 51, 51, 0.3);
+  -o-border-radius:6px 6px 6px 6px;
+  -o-box-shadow:0 1px 2px rgba(51, 51, 51, 0.3);
+  -webkit-border-radius:6px 6px 6px 6px;
+  -webkit-box-shadow:0 1px 2px rgba(51, 51, 51, 0.3);
+  -moz-border-radius:6px 6px 6px 6px;
+  -moz-box-shadow:0 1px 2px rgba(51, 51, 51, 0.3);
+  background-color:#fff;
+  display:block;
+  float:right;
+  width:25%;
+  margin:0 1% 0 0;
+  padding-top:6px;
+}
+
+#tm .title{
+  box-shadow: 0 1px 5px #E73525, inset 0 5px 10px #ff5745;
+  -o-box-shadow: 0 1px 5px #E73525, inset 0 5px 10px #ff5745;
+  -webkit-box-shadow: 0 1px 5px #E73525, inset 0 5px 10px #ff5745;
+  -moz-box-shadow: 0 1px 5px #E73525, inset 0 5px 10px #ff5745;
+  background-color:#ea594a;
+  margin:5px 0 0 10px;
+  padding:4px;
+  width:80px;
+  float:left;
+}
+
+#tm .stat_number{
+  box-shadow: 0 1px 5px #FC9200, inset 0 5px 10px #ffb54c;
+  -o-box-shadow: 0 1px 5px #FC9200, inset 0 5px 10px #ffb54c;
+  -webkit-box-shadow: 0 1px 5px #FC9200, inset 0 5px 10px #ffb54c;
+  -moz-box-shadow: 0 1px 5px #FC9200, inset 0 5px 10px #ffb54c;
+  background-color:#FFB515;
+  margin:10px 2px 5px 10px;
+  padding:4px;
+  width:80px;
+  float:left;
+  clear:both;
+}
+
+#tm .stat_desc{
+  box-shadow: 0 1px 5px #FC9200, inset 0 5px 10px #ffb54c;
+  -o-box-shadow: 0 1px 5px #FC9200, inset 0 5px 10px #ffb54c;
+  -webkit-box-shadow: 0 1px 5px #FC9200, inset 0 5px 10px #ffb54c;
+  -moz-box-shadow: 0 1px 5px #FC9200, inset 0 5px 10px #ffb54c;
+  background-color:#FFB515;
+  margin:10px 2px 5px 10px;
+  padding:4px;
+  width:80px;
+  float:left;
+}
+
+/***** end - right_painel *****/
