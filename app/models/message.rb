@@ -28,6 +28,10 @@ class Message < ActiveRecord::Base
   def check_text_for_urls
     self.text.gsub(/(http:\/\/[A-Za-z0-9\.\/\-\%\?\&_]+)/, '<a href="\1" target="blank">\1</a>').gsub(/@([A-Za-z0-9_]+)/, '<a href="http://twitter.com/\1" target="blank">@\1</a>').gsub(/#([A-Za-z0-9_]+)/, '<a href="http://search.twitter.com/search?q=#\1" target="blank">#\1</a>')
   end
-
+  
+  def self.last_messages(params={})
+    params = {:quantity => 20}.merge(params)
+    all(:limit=> params[:quantity], :order => "created_at DESC")
+  end
 end
 

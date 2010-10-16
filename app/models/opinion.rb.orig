@@ -7,6 +7,9 @@ class Opinion < ActiveRecord::Base
   UNCLASSIFIED = -1
   GOOD = 0
   BAD = 1
+<<<<<<< HEAD
+  has_many :messages, :through => :messages_opinions
+
   def get_expressions()
     words=self.name.split(" ")
     my_expressions = []
@@ -25,5 +28,8 @@ class Opinion < ActiveRecord::Base
       go_into_node(i+1,words,"#{space}#{words[i-1]} ",arr)
     end
   end
+=======
+
+>>>>>>> 4c63062e7ba78d4521773b6e92b0e39d5d94f644
 end
 
