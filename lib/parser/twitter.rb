@@ -15,13 +15,14 @@ module Parser
 private
     def Twitter.get_brand(name)
       brand = Brand.find_by_name(name)
-      brand = Brand.create(:name => name) if brand.nil?
+      brand = Brand.create(:name => name, :site => "", :description => "", :twitter_profile => "", :status => Brand::INVALID) if brand.nil?
       brand
     end
     
     def Twitter.get_opinion(expression)
       opinion = Opinion.find_by_name(expression)
-      opinion = Opinion.create(:name => expression) if opinion.nil?
+      opinion = Opinion.create(:name => expression, :expression => expression, 
+                              :language_code => "", :classification => Opinion::UNCLASSIFIED) if opinion.nil?
       opinion
     end
   end

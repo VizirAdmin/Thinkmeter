@@ -5,14 +5,10 @@ class MessageProcessorWorker
   def perform
     Message.update_all("status = 1","status = 0")
     messages = Message.find_all_by_status(1)
-    puts "1"
     messages.each do |message|
-    puts "2"
 #      begin
         brand, opinion = Parser::Twitter.parse(message)
-    puts "3 brand:#{brand.nil?}, opinion:#{opinion.nil?}"
         if(!opinion.nil? && !brand.nil?)
-          puts "opinion and brand valids"
           associate_opinion_to_brand(message, brand, opinion)
         else
           puts "opinion and brand invalids"
