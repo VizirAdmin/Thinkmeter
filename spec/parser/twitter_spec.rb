@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Parser::Twitter do
   
-  fixtures :messages
+  fixtures :opinions, :messages, :brands
 
   it "should be true" do
     true.should be_true

@@ -1,10 +1,27 @@
-
 bad_message:
   twitter_id: 1234560001
   text: "I need me a lil boo...#ithink*** yes!"
+  status: 0
   
 good_message:
   twitter_id: 1234560002
   text: "#ithink railsrumble rocks"
+  status: 0
+
+good_cleo:
+  twitter_id: 1234560003
+  from_user: "aaa"
+  from_user_id: 1
+  language_code: "pt"
+  text: "jksakjhdcjkbcdsa sjsagd #ithink cleopires uma delicia"
+  status: 0
+
+bad_locaweb:
+  twitter_id: 1234560004
+  from_user: "bbb"
+  from_user_id: 1
+  language_code: "pt"
+  text: "jksakjhdcjkbcdsa sjsagd #ithink locaweb uma bosta"
+  status: 0
   
   

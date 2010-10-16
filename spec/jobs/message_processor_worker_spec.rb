@@ -4,7 +4,7 @@ describe MessageProcessorWorker do
 
   fixtures :opinions, :messages, :brands
 
-  it "process messages with opinion and brand existent" do
+  it "process messages with good and bad opinion and brand existent" do
     mpw = MessageProcessorWorker.new()
     mpw.perform
     msgs = Message.find_all_by_status(2)

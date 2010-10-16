@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+cleopires:
+  name: "cleopires"
+  site: ""
+  description: ""
+  twitter_profile: ""
+
+locaweb:
+  name: "locaweb"
+  site: ""
+  description: ""
+  twitter_profile: ""
+  
+railsrumble:
+  name: "railsrumble"
+  site: ""
+  description: ""
+  twitter_profile: ""
