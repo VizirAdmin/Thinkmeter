@@ -1,0 +1,146 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+ducaralho:
+  name: "do caralho"
+  expression: "ducaralho, do caralho, du caralho, do caralho"
+  classification: 0
+  language_code: "pt"
+
+bom:
+  name: "bom"
+  expression: "bom"
+  classification: 0
+  language_code: "pt"
+
+muitobom:
+  name: "muito bom"
+  expression: "muito bom, muitobom"
+  classification: 0
+  language_code: "pt"
+
+bompracacete:
+  name: "bom pra cacete"
+  expression: "bom pra cacete, bompracacete, bom pracacete, bompra cacete"
+  classification: 0
+  language_code: "pt"
+
+boa:
+  name: "boa"
+  expression: "boa"
+  classification: 0
+  language_code: "pt"
+
+muitoboa:
+  name: "muito boa"
+  expression: "muito boa, muitoboa"
+  classification: 0
+  language_code: "pt"
+
+bompracacete:
+  name: "boa pra cacete"
+  expression: "boa pra cacete, boapracacete, boa pracacete, boapra cacete"
+  classification: 0
+  language_code: "pt"
+
+gostosa:
+  name: "gostosa"
+  expression: "gostosa"
+  classification: 0
+  language_code: "pt"
+
+muitogostosa:
+  name: "muito gostosa"
+  expression: "muito gostosa, muitogostosa"
+  classification: 0
+  language_code: "pt"
+
+gostosapracacete:
+  name: "gostosa pra cacete"
+  expression: "gostosa pra cacete, gostosapracacete, gostosapra cacete, gostosa pracacete"
+  classification: 0
+  language_code: "pt"
+
+delicia:
+  name: "delicia"
+  expression: "delicia"
+  classification: 0
+  language_code: "pt"
+
+deliciosa:
+  name: "deliciosa"
+  expression: "deliciosa"
+  classification: 0
+  language_code: "pt"
+
+delicioso:
+  name: "delicioso"
+  expression: "delicioso"
+  classification: 0
+  language_code: "pt"
+
+ruim:
+  name: "ruim"
+  expression: "ruim"
+  classification: 0
+  language_code: "pt"
+
+muitoruim:
+  name: "muito ruim"
+  expression: "muitoruim, muito ruim"
+  classification: 0
+  language_code: "pt"
+
+ruimpracacete:
+  name: "ruim pra cacete"
+  expression: "ruim pra cacete, ruimpracacete, ruimpra cacete, ruim pracacete"
+  classification: 0
+  language_code: "pt"
+
+meiaboca:
+  name: "meia boca"
+  expression: "meia boca, meiaboca"
+  classification: 0
+  language_code: "pt"
+
+horrivel:
+  name: "horrivel"
+  expression: "horrivel"
+  classification: 0
+  language_code: "pt"
+
+horripilante:
+  name: "horripilante"
+  expression: "horripilante"
+  classification: 0
+  language_code: "pt"
+
+feio:
+  name: "feio"
+  expression: "feio"
+  classification: 0
+  language_code: "pt"
+
+ridiculo:
+  name: "ridiculo"
+  expression: "ridiculo"
+  classification: 0
+  language_code: "pt"
+
+tosco:
+  name: "tosco"
+  expression: "tosco"
+  classification: 0
+  language_code: "pt"
+
+muitotosco:
+  name: "muito tosco"
+  expression: "muito tosco, muitotosco"
+  classification: 0
+  language_code: "pt"
+
+tosquissimo:
+  name: "tosquissimo"
+  expression: "tosquissimo"
+  classification: 0
+  language_code: "pt"
+
