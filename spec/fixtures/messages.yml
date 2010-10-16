@@ -31,3 +31,27 @@ new_brand_and_opinion:
   language_code: "pt"
   text: "jksakjhdcjkbcdsa sjsagd #ithink patata uma desgraça"
   status: 0  
+
+mixed_case_names:
+  twitter_id: 1234560006
+  from_user: "bbb"
+  from_user_id: 1
+  language_code: "en"
+  text: "#ithink MixedCaseBrandName PreatyCool"
+  status: 0
+  
+special_chars_names:
+  twitter_id: 1234560007
+  from_user: "bbb"
+  from_user_id: 1
+  language_code: "en"
+  text: "#ithink special&chars?brandname preaty&cool"
+  status: 0
+
+names_with_accents:
+  twitter_id: 1234560008
+  from_user: "bbb"
+  from_user_id: 1
+  language_code: "en"
+  text: "#ithink brãndwithácçénts préatyçôõl"
+  status: 0
