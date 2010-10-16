@@ -15,9 +15,6 @@ class MessageProcessorWorker
         if(!opinion.nil? && !brand.nil?)
           puts "opinion and brand valids"
           associate_opinion_to_brand(message, brand, opinion)
-        elsif(!opinion.nil?)
-          puts "opinion valid"
-          
         else
           puts "opinion and brand invalids"
         end

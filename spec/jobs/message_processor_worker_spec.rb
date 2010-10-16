@@ -9,7 +9,7 @@ describe MessageProcessorWorker do
     mpw.perform
     msgs = Message.find_all_by_status(2)
     msgs.size.should > 1
-    cp = Brand.find_by_name("cleo pires", :include => [:messages, :opinions])
+    cp = Brand.find_by_name("cleopires", :include => [:messages, :opinions])
     cp.opinions.size.should be 1
     cp.opinions[0].classification.should be Opinion::GOOD
     cp.messages.size.should be 1
