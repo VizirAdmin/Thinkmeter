@@ -5,7 +5,7 @@ class MessageProcessorWorker
     messages = Message.find_all_by_status(1)
     messages.each do |message|
       begin
-        object, opinion = Interpretor.interpret(message)
+        brand, opinion = Interpretor.interpret(message)
         
       rescue
         message.status = 3
