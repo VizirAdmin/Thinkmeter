@@ -14,7 +14,9 @@ class MessageProcessorWorker
   def process_message(message)
     begin
       brand, opinion = Parser::Twitter.parse(message)
-      if(!opinion.nil? && !brand.nil?)
+      if opinion && brand
+        brand.save
+        opinion.save
         associate_opinion_to_brand(message, brand, opinion)
       else
         puts "opinion and brand invalids"
