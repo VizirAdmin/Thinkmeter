@@ -1,0 +1,24 @@
+<% form_for brand do |f|%>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :site %><br />
+    <%= f.text_field :site %>
+  </p>
+  <p>
+    <%= f.label :twitter_profile %><br />
+    <%= f.text_field :twitter_profile %>
+  </p>
+  <p>
+    <%= f.label :status %><br />
+    <%= f.select :status, options_for_select({"Not set" => 0, "Valid" => 1, "Invalid" => 2}, brand.status )%>
+  </p>
+  <%= f.submit "Save" %>
+<% end %>
+

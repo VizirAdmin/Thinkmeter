@@ -7,4 +7,5 @@ class Brand < ActiveRecord::Base
   INITIAL = 0
   VALID = 1
   INVALID = 2
+  named_scope :not_validated, :conditions => 'status = 0'
 end
