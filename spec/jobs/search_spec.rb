@@ -11,12 +11,6 @@ describe SearchWorker do
     result.first.id.should > 0
   end
 
-#  it "adicionar tweet no banco" do
-#    result = @search_worker.get_tweets(@search_vizir)
-#    message = @search_worker.add_message_to_database(@search_vizir,result.first)
-#    message.twitter_id.should == result.first.id
-#  end
-
 #  it "adicionar tweets no banco" do
 #    result = @search_worker.get_tweets(@search_vizir)
 #    @search_worker.add_page_to_database(@search_vizir,result)
