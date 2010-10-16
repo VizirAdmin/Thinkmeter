@@ -1,0 +1,205 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+ducaralho_1:
+  expression: "ducaralho"
+  opinion: ducaralho
+
+ducaralho_2:
+  expression: "docaralho"
+  opinion: ducaralho
+
+ducaralho_3:
+  expression: "du caralho"
+  opinion: ducaralho
+
+ducaralho_4:
+  expression: "do caralho"
+  opinion: ducaralho
+
+bom:
+  expression: "bom"
+  opinion: bom
+
+muitobom_1:
+  expression: "muito bom"
+  opinion: muitobom
+
+muitobom_2:
+  expression: "muitobom"
+  opinion: muitobom
+
+bompracacete_1:
+  expression: "bom pra cacete"
+  opinion: bompracacete
+
+bompracacete_2:
+  expression: "bompracacete"
+  opinion: bompracacete
+
+bompracacete_3:
+  expression: "bom pracacete"
+  opinion: bompracacete
+
+bompracacete_4:
+  expression: "bompra cacete"
+  opinion: bompracacete
+
+boa:
+  expression: "boa"
+  opinion: boa
+
+muitoboa_1:
+  expression: "muito boa"
+  opinion: muitoboa
+
+muitoboa_2:
+  expression: "muitoboa"
+  opinion: muitoboa
+
+
+boapracacete_1:
+  expression: "boa pra cacete"
+  opinion: boapracacete
+
+boapracacete_2:
+  expression: "boapracacete"
+  opinion: boapracacete
+
+boapracacete_3:
+  expression: "boa pracacete"
+  opinion: boapracacete
+
+boapracacete_4:
+  expression: "boapra cacete"
+  opinion: boapracacete
+
+gostosa:
+  expression: "gostosa"
+  opinion: gostosa
+
+muitogostosa_1:
+  expression: "muito gostosa"
+  opinion: muitogostosa
+  
+muitogostosa_2:
+  expression: "muitogostosa"
+  opinion: muitogostosa
+
+gostosapracacete_1:
+  expression: "gostosa pra cacete"
+  opinion: gostosapracacete
+
+gostosapracacete_2:
+  expression: "gostosapracacete"
+  opinion: gostosapracacete
+
+gostosapracacete_3:
+  expression: "gostosapra cacete"
+  opinion: gostosapracacete
+
+gostosapracacete_4:
+  expression: "gostosa pracacete"
+  opinion: gostosapracacete
+  
+umadelicia:
+  expression: "umadelicia"
+  opinion: umadeleicia  
+
+umadelicia:
+  expression: "umadelicia"
+  opinion: umadeleicia  
+  
+  
+delicia:
+  expression: "delicia"
+  opinion: delecia
+
+deliciosa:
+  expression: "deliciosa"
+  opinion: deliciosa
+  
+delicioso:
+  expression: "delicioso"
+  opinion: delicioso
+
+ruim:
+  expression: "ruim"
+  opinion: ruim
+
+muitoruim_1:
+  expression: "muitoruim"
+  opinion: muitoruim
+
+muitoruim_2:
+  expression: "muito ruim"
+  opinion: muitoruim
+
+ruimpracacete_1:
+  expression: "ruim pra cacete"
+  opinion: ruimpracacete
+
+ruimpracacete_2:
+  expression: "ruimpracacete"
+  opinion: ruimpracacete
+
+ruimpracacete_3:
+  expression: "ruimpra cacete"
+  opinion: ruimpracacete
+
+ruimpracacete_4:
+  expression: "ruim pracacete"
+  opinion: ruimpracacete
+  
+umabosta_1:
+  expression: "uma bosta"
+  opinion: umabosta
+
+umabosta_2:
+  expression: "umabosta"
+  opinion: umabosta
+
+meiaboca_1:
+  expression: "meia boca"
+  opinion: meiaboca
+
+meiaboca_2:
+  expression: "meiaboca"
+  opinion: meiaboca
+
+horrivel:
+  expression: "horrivel"
+  opinion: horrivel
+  
+horripilante:
+  expression: "horripilante"
+  opinion: horripilante
+
+feio:
+  expression: "feio"
+  opinion: feio
+
+ridiculo:
+  expression: "ridiculo"
+  opinion: ridiculo
+  
+tosco:
+  expression: "tosco"
+  opinion: tosco
+
+muitotosco_1:
+  expression: "muito tosco"
+  opinion: muitotosco
+
+muitotosco_2:
+  expression: "muitotosco"
+  opinion: muitotosco
+
+tosquissimo:
+  expression: "tosquissimo"
+  opinion: tosquissimo  
+  
+#Inglês
+rocks:
+  expression: "rocks"
+  opinion: rocks
+

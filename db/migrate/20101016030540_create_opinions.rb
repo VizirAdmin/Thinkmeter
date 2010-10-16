@@ -2,7 +2,6 @@ class CreateOpinions < ActiveRecord::Migration
   def self.up
     create_table :opinions do |t|
       t.string :name
-      t.string :expression
       t.integer :classification
       t.string :language_code
 
