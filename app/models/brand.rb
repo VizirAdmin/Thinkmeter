@@ -4,13 +4,13 @@ class Brand < ActiveRecord::Base
   has_many :messages, :through => :messages_brands
   has_many :opinions, :through => :brands_opinions
   
-  INVALID = 0
+  INITIAL = 0
   VALID = 1
-  
-  named_scope :not_validated, :conditions => 'status is NULL'
-  
+  INVALID = 2
+  named_scope :not_validated, :conditions => 'status = 0'
+    
   def self.find_all_with_tags
-    tags = Vizir::ActsAsTag.friendly_tags(find_as_tags)
+    Vizir::ActsAsTag.friendly_tags(find_as_tags)
   end
 
 private

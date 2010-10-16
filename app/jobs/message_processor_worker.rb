@@ -19,12 +19,13 @@ class MessageProcessorWorker
         opinion.save
         associate_opinion_to_brand(message, brand, opinion)
       else
-        puts "opinion and brand invalids"
+        puts "opinion and brand invalids, brand:#{brand.name}"
         message.status = 3
         message.trashed = 1
         message.save
       end
     rescue
+      puts "Error processing message message:#{message.text}"
       message.status = 3
       message.save
     end   

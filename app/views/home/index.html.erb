@@ -1,11 +1,11 @@
 <script type="text/javascript">
-  $(document).ready(function(){
+  jQuey(document).ready(function(){
 
-    $(".rounded-img2").load(function() {
-      $(this).wrap(function(){
-        return '<span class="' + $(this).attr('class') + '" style="background:url(' + $(this).attr('src') + ') no-repeat center center; width: ' + $(this).width() + 'px; height: ' + $(this).height() + 'px;" />';
+    jQuery(".rounded-img2").load(function() {
+      jQuery(this).wrap(function(){
+        return '<span class="' + jQuery(this).attr('class') + '" style="background:url(' + jQuery(this).attr('src') + ') no-repeat center center; width: ' + jQuery(this).width() + 'px; height: ' + jQuery(this).height() + 'px;" />';
       });
-      $(this).css("opacity","0");
+      jQuery(this).css("opacity","0");
     });
 
   });
