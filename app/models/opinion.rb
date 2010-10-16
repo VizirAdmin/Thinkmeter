@@ -28,8 +28,14 @@ class Opinion < ActiveRecord::Base
   #   end
   # end
   
-  def add_expression(expression)
-    self.expressions << Expression.create(:expression => expression)
+  def add_expression(name)
+    self.expressions << Expression.create(:expression => name)
     self.save
+    self
+  end
+  
+  def Opinion.find_by_expression(name)
+    expression = Expression.find_by_expression(name, :include => [:opinion])
+    expression.opinion
   end
 end

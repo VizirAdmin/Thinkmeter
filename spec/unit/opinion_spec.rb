@@ -17,7 +17,10 @@ describe Opinion do
   end
   
   it "deve encontrar uma opinião dada uma expressao" do
-    
+    Opinion.new(:name => "legal").add_expression("bem legal").save
+    opinion = Opinion.find_by_expression("bem legal")
+    opinion.should_not be_nil
+    opinion.name.should == "legal"
   end
 
 end
