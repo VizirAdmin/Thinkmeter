@@ -18,6 +18,9 @@ class MessageProcessorWorker
         associate_opinion_to_brand(message, brand, opinion)
       else
         puts "opinion and brand invalids"
+        message.status = 3
+        message.trashed = 1
+        message.save
       end
     rescue
       message.status = 3

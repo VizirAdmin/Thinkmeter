@@ -37,7 +37,6 @@ private
         )
         Expression.new(:expression => expression, :opinion => opinion)
       end
-                            
       opinion
     end
   end

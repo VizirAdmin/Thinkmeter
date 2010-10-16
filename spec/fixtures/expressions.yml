@@ -101,14 +101,13 @@ gostosapracacete_4:
   expression: "gostosa pracacete"
   opinion: gostosapracacete
   
-umadelicia:
+umadelicia_1:
   expression: "umadelicia"
-  opinion: umadeleicia  
+  opinion: umadelicia  
 
-umadelicia:
-  expression: "umadelicia"
-  opinion: umadeleicia  
-  
+umadelicia_2:
+  expression: "uma delicia"
+  opinion: umadelicia  
   
 delicia:
   expression: "delicia"
