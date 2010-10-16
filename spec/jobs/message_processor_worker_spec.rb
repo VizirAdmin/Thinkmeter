@@ -7,6 +7,8 @@ describe MessageProcessorWorker do
   it "process messages with good and bad opinion and brand existent" do
     mpw = MessageProcessorWorker.new()
     mpw.perform
+    msgs = Message.find_all_by_status(3)
+    puts "msg3:#{msgs.size}"
     msgs = Message.find_all_by_status(2)
     msgs.size.should > 1
     cp = Brand.find_by_name("cleopires", :include => [:messages, :opinions])

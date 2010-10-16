@@ -35,6 +35,8 @@ private
           :classification => Opinion::UNCLASSIFIED
         )
         opexp = Expression.create(:expression => expression, :opinion => opinion)
+      else
+        opinion = opexp.opinion
       end
       opinion
     end
