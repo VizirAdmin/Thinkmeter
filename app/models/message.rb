@@ -1,4 +1,9 @@
 class Message < ActiveRecord::Base
+  has_many :messages_brands
+  has_many :messages_opinions
+  has_many :brands, :through => :messages_brands
+  has_many :opinions, :through => :messages_opinions
+
   NOT_PROCESSED = 0
   PROCESSING = 1
   PROCESSED = 2

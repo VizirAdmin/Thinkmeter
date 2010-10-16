@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(:version => 20101016053010) do
     t.datetime "updated_at"
   end
 
+  create_table "brands_opinions", :force => true do |t|
+    t.integer  "brand_id"
+    t.integer  "opinion_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "messages", :force => true do |t|
     t.string   "from_user"
     t.integer  "from_user_id"
