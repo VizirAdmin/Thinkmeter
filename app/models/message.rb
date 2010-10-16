@@ -1,5 +1,9 @@
 class Message < ActiveRecord::Base
-
+  NOT_PROCESSED = 0
+  PROCESSING = 1
+  PROCESSED = 2
+  ERROR = 3
+  
   def before_create
     m = Message.first :conditions => ["twitter_id = ?", self.twitter_id]
     m.nil?
