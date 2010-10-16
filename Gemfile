@@ -2,6 +2,8 @@ source :gemcutter
 
 gem "rails", "2.3.8"
 gem "mysql", "2.8.1"
+gem "restfulie"
+
 
 group :development do
 end
