@@ -4,10 +4,6 @@ describe Brand do
 
   fixtures :brands, :messages_brands
 
-  before(:each) do
-    @cleo = brands(:cleopires)
-  end
-
   describe "Brand acts as tags" do
   #unit
     it "should find tags" do
@@ -19,6 +15,7 @@ describe Brand do
       tags[1].total.should == "1"
     end
     it "should show friendly tags" do
+      #é na verdade, um teste da lib
       #era para ter mock, mas vai dá trabalho
       tags = Vizir::ActsAsTag.friendly_tags(Brand.find_as_tags)
       tags[0][:tag].should == "cleopires"
