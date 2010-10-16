@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe MessageProcessorWorker do
 
-  fixtures :opinions, :opinionexpressions, :messages, :brands
+  fixtures :opinions, :opinions, :messages, :brands
 
   it "process messages with opinion and brand existent" do
     mpw = MessageProcessorWorker.new()
