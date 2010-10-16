@@ -36,6 +36,6 @@ class Opinion < ActiveRecord::Base
   
   def Opinion.find_by_expression(name)
     expression = Expression.find_by_expression(name, :include => [:opinion])
-    expression.opinion
+    expression.nil? ? nil : expression.opinion
   end
 end
