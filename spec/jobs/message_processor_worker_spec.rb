@@ -27,7 +27,7 @@ describe MessageProcessorWorker do
     mpw = MessageProcessorWorker.new()
     mpw.perform
     b = Brand.find_by_name("patata")
-    b.nil?.should be false
+    b.should_not be_nil
     b.status.should be Brand::INVALID
     o = Opinion.find_by_name("uma desgraça", :include => [:expressions])
     o.nil?.should be false
