@@ -60,6 +60,12 @@ gostosapracacete:
   classification: 0
   language_code: "pt"
 
+umadelicia:
+  name: "uma delicia"
+  expression: "uma delicia, umadelicia"
+  classification: 0
+  language_code: "pt"
+  
 delicia:
   name: "delicia"
   expression: "delicia"

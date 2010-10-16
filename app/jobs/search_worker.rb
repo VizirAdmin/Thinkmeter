@@ -7,7 +7,7 @@ class SearchWorker
   end
 
   def get_tweets(last_tweet_id)
-    @twitter.search("#IThink",last_tweet_id)
+    @twitter.search("#euacho",last_tweet_id)
   end
 
   def add_search_to_database

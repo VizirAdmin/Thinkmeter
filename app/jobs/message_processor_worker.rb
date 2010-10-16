@@ -1,29 +1,37 @@
+require 'lib/parser/twitter'
+
 class MessageProcessorWorker
   
+  def initialize
+    @twitter_parser = Parser::Twitter.new
+  end
+
   def perform
     Message.update_all("status = 1","status = 0")
     messages = Message.find_all_by_status(1)
     messages.each do |message|
-      begin
-        brand, opinion = Interpretor.interpret(message)
+#      begin
+        brand, opinion = @twitter_parser.parse(message)
         if(!opinion.nil? && !brand.nil?)
-          associate_opinion_to_brand(mesage, brand, opinion)
+          puts "opinion and brand valids"
+          associate_opinion_to_brand(message, brand, opinion)
         elsif(!opinion.nil?)
+          puts "opinion valid"
           
         else
-        
+          puts "opinion and brand invalids"
         end
-      rescue
-        message.status = 3
-        message.save
-      end      
+ #     rescue
+  #      message.status = 3
+   #     message.save
+    #  end   
     end
     Message.update_all("status = 2","status = 1")
   end
   
-  def associate_opinion_to_brand(mesage, brand, opinion)
+  def associate_opinion_to_brand(message, brand, opinion)
     MessagesBrand.create(:message_id => message.id, :brand_id => brand.id)
     MessagesOpinion.create(:message_id => message.id, :opinion_id => opinion.id)
-    BrandsOpinion.create(:brand_id => brand_id, :opinion_id => opinion.id)
+    BrandsOpinion.create(:brand_id => brand.id, :opinion_id => opinion.id)
   end
 end
