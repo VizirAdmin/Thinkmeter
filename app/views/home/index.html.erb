@@ -1,3 +1,16 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $(".rounded-img2").load(function() {
+      $(this).wrap(function(){
+        return '<span class="' + $(this).attr('class') + '" style="background:url(' + $(this).attr('src') + ') no-repeat center center; width: ' + $(this).width() + 'px; height: ' + $(this).height() + 'px;" />';
+      });
+      $(this).css("opacity","0");
+    });
+
+  });
+</script>
+
 <div id="container" style="height:300px;">
   <div class="title">BRANDS</div>
   <div id="brands_tags">
@@ -10,6 +23,18 @@
   <div class="title">STATS</div>
   <div class="stat_number">5 millions</div>
   <div class="stat_desc">tweets</div>
+  <div class="title">MESSAGES</div>
+  <div id="last_messages">
+    <ul>
+      <%@messages.each do |message|%>
+        <li class="tweet">
+          <a href="http://twitter.com/<%= message.from_user%>" target="_blank">
+          <img class="rounded-img2" src="<%= message.profile_img_url%>" alt="<%= message.from_user%> profile" width="50" height="50"></a>
+          <%=message.html_text%>
+        </li>
+      <%end%>
+    </ul>
+  </div>
 </div>
 
 <div id="home_chart">
