@@ -8,4 +8,21 @@ class Brand < ActiveRecord::Base
   VALID = 1
   
   named_scope :not_validated, :conditions => 'status is NULL'
+  
+  def self.find_all_with_tags
+    tags = Vizir::ActsAsTag.friendly_tags(find_as_tags)
+  end
+
+private
+
+  def self.find_as_tags
+    find_by_sql(
+      "SELECT b.name AS name, count(*) AS total
+       FROM brands b
+       INNER JOIN messages_brands mb ON mb.brand_id = b.id
+       GROUP BY b.name
+       ORDER BY total DESC"
+      )
+  end
+  
 end

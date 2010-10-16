@@ -15,6 +15,14 @@ good_cleo:
   language_code: "pt"
   text: "jksakjhdcjkbcdsa sjsagd #ithink cleopires uma delicia"
   status: 0
+  
+very_good_cleo:
+  twitter_id: 2234560003
+  from_user: "zzz"
+  from_user_id: 1
+  language_code: "pt"
+  text: "jksakjhdcjkbcdsa sjsagd #ithink cleopires gostosa pra cacete"
+  status: 0
 
 bad_locaweb:
   twitter_id: 1234560004
