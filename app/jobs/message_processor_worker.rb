@@ -6,12 +6,20 @@ class MessageProcessorWorker
     messages.each do |message|
       begin
         brand, opinion = Interpretor.interpret(message)
+        if(!opinion.nil?)
+          associate_opinion_to_brand(mesage, brand, opinion)
+        else
         
+        end
       rescue
         message.status = 3
         message.save
       end      
     end
     Message.update_all("status = 2","status = 1")
+  end
+  
+  def associate_opinion_to_brand(mesage, brand, opinion)
+    
   end
 end
