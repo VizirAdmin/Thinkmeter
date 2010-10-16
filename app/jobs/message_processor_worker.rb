@@ -6,8 +6,10 @@ class MessageProcessorWorker
     messages.each do |message|
       begin
         brand, opinion = Interpretor.interpret(message)
-        if(!opinion.nil?)
+        if(!opinion.nil? && !brand.nil?)
           associate_opinion_to_brand(mesage, brand, opinion)
+        elsif(!opinion.nil?)
+          
         else
         
         end
@@ -20,6 +22,7 @@ class MessageProcessorWorker
   end
   
   def associate_opinion_to_brand(mesage, brand, opinion)
-    
+    MessagesBrand.create(:message_id => message.id, :brand_id => brand.id)
+    MessagesOpinion.create(:message_id => message.id, :opinion_id => opinion.id)
   end
 end
