@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101016044131) do
+ActiveRecord::Schema.define(:version => 20101016053010) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -36,7 +36,10 @@ ActiveRecord::Schema.define(:version => 20101016044131) do
     t.integer  "recent_retweets"
     t.string   "result_type"
     t.datetime "updated_at"
+    t.text     "html_text"
   end
+
+  add_index "messages", ["twitter_id"], :name => "index_messages_on_twitter_id", :unique => true
 
   create_table "messages_brands", :force => true do |t|
     t.integer  "message_id"
