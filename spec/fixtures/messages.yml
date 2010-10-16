@@ -1,0 +1,10 @@
+
+bad_message:
+  twitter_id: 1234560001
+  text: "I need me a lil boo...#ithink*** yes!"
+  
+good_message:
+  twitter_id: 1234560002
+  text: "#ithink railsrumble rocks"
+  
+  
