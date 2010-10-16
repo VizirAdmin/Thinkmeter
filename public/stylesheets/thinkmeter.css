@@ -143,7 +143,7 @@ body {
   padding:4px;
   width:40px;
   float:left;
-  position:relative;
+  position:absolute;
   z-index:100;
 }
 
@@ -151,6 +151,18 @@ body {
   float:left;
   clear:both;
   color:#fff;
-  font-weight:bold;
   margin:10px 5px 10px 10px;
 }
+/***** end - home_chart *****/
+
+/***** begin - tag_cloud *****/
+
+#tm .tag_cloud LI { display: inline; font-weight:bold;}
+#tm .tag_cloud .not-popular { font-size: 1em; }
+#tm .tag_cloud .not-very-popular { font-size: 1.2em; }
+#tm .tag_cloud .somewhat-popular { font-size: 1.4em; }
+#tm .tag_cloud .popular { font-size: 1.6em; }
+#tm .tag_cloud .very-popular { font-size: 1.8em; }
+#tm .tag_cloud .ultra-popular { font-size: 2.2em; }
+    
+/***** end - tag_cloud *****/
