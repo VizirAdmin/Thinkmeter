@@ -27,16 +27,15 @@ private
     end
     
     def Twitter.find_opinion_by_expression(expression)
-      opinion = Opinion.find_by_expression expression
+      opinion = Opinion.find_by_expression(expression)
       
       if !opinion
         opinion = Opinion.new(
           :name => expression,
-          :language_code => "", 
+          :language_code => "",
           :classification => Opinion::UNCLASSIFIED
         )
-      else
-        opinion = opexp.opinion
+        opinion.add_expression(expression)
       end
       
       opinion
