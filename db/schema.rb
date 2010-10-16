@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101016030540) do
+ActiveRecord::Schema.define(:version => 20101016043024) do
 
   create_table "messages", :force => true do |t|
     t.string   "from_user"
@@ -40,6 +40,15 @@ ActiveRecord::Schema.define(:version => 20101016030540) do
 
   create_table "searches", :force => true do |t|
     t.integer  "last_tweet_id", :limit => 8, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "searchlogs", :force => true do |t|
+    t.datetime "date_start"
+    t.datetime "date_end"
+    t.integer  "count"
+    t.integer  "rc"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
