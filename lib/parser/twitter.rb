@@ -1,6 +1,7 @@
 module Parser
   class Twitter
-    REGEXP = /^#ithink ([\#\@a-zA-Z0-9]+) (.*)/
+    # TODO parametrizar ou aceitar varios tokens: #ithink, #euacho etc
+    REGEXP = /^\#ithink ([\#\@a-zA-Z0-9]+) (.*)/
     
     def Twitter.parse(message)
       match = REGEXP.match(message.text)
