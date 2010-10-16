@@ -17,7 +17,7 @@ describe Parser::Twitter do
   it "deve retornar [Brand,Opinion] para uma mensagem bem formatada" do
     brand, opinion = Parser::Twitter.parse messages(:good_message)
     brand.name.should == "railsrumble"
-    opinion.name.should == "rocks"
+    opinion.has_expression("rocks").should be_true
   end
   
 end

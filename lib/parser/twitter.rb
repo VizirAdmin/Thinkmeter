@@ -6,36 +6,36 @@ module Parser
     def Twitter.parse(message)
       match = REGEXP.match(message.text)
       if !match.nil?
-        return get_brand(match[1]), get_opinion(match[2])
+        return find_brand_by_name(match[1]), find_opinion_by_expression(match[2])
       else
         return nil, nil
       end
     end
     
 private
-    def Twitter.get_brand(name)
+    def Twitter.find_brand_by_name(name)
       brand = Brand.find_by_name(name)
-      brand = Brand.create(
+      brand = Brand.new(
         :name => name, 
         :site => "", 
         :description => "", 
         :twitter_profile => "", 
         :status => Brand::INVALID
-      ) if brand.nil?
+      ) if !brand
+      
       brand
     end
     
-    def Twitter.get_opinion(expression)
-      opexp = Expression.find_by_expression(expression, :include => [:opinion])
+    def Twitter.find_opinion_by_expression(expression)
+      opinion = Opinion.find_by_expression expression
       
-      if opexp.nil?
-        opinion = Opinion.create(
-          :name => expression, 
-          :expression => expression, 
+      if !opinion
+        opinion = Opinion.new(
+          :name => expression,
           :language_code => "", 
           :classification => Opinion::UNCLASSIFIED
         )
-        opexp = Expression.create(:expression => expression, :opinion => opinion)
+        Expression.new(:expression => expression, :opinion => opinion)
       end
                             
       opinion
