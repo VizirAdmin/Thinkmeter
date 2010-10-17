@@ -1,0 +1,58 @@
+<div id="actual_path">
+  /<%=link_to @brand.name, brand_page_path(params[:id])%>
+</div>
+<div class="stat_number">
+  <%=@brand_count%>
+</div>
+
+<div class="stat_desc">
+  tweets with <b><%=@brand.name%></b>
+</div>
+
+<div>
+  <%
+    visualization "opinion_chart", "PieChart", :width => "450",
+                    :height => 300, :title => "'Brand per Opinions'",
+                    :vAxis => "{title: ''}",
+                    :hAxis => "{title: ''}",
+                    :legend => "'bottom'",
+                    :html => {:class => "class"} do |chart|
+      chart.string "Opinion"
+      chart.number "Mentions"
+      chart.add_rows(@brand_data_for_chart)
+    end
+  %>
+</div>
+
+<div id="stat_painel">
+  <div class="title">STATS</div>
+  <table class="thinkmeter_stats">
+    <tbody>
+    <tr>
+      <td>
+        <%=@brand_count%>
+        <span class="stats_count">tweets</span>
+      </td>
+      <td>
+        <%=@positive_opinion_count%>
+        <span class="stats_count">positive</span>
+      </span></td>
+      <td>
+        <%=@negative_opinion_count%>
+        <span class="stats_count">negative</span>
+      </span></td>
+    </tr>
+  </tbody>
+  </table>
+</div>
+
+
+<div id="container" style="height:300px;width:820px;">
+  <div class="title">Opinions for this brand</div>
+  <div id="brands_tags">
+    <ol class="tag_cloud">
+      <%=list_tags(@brand_opinions,"opinion")%>
+    </ol>
+  </div>
+</div>
+

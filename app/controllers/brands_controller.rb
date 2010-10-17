@@ -2,17 +2,17 @@ class BrandsController < ApplicationController
   def index
     @brands = Brand.not_validated
   end
-  
-  def new 
+
+  def new
   end
-  
+
   def create
   end
-  
+
   def edit
     @brand = Brand.find(params[:id])
   end
-  
+
   def update
     @brand = Brand.find(params[:id])
     respond_to do |format|
@@ -27,6 +27,16 @@ class BrandsController < ApplicationController
 
   end
 
+  def brand_page
+    @brand = Brand.find(params[:id])
+    @brand_data_for_chart = Brand.get_brand_per_opinions(params[:id].to_i)
+    @brand_count = @brand.messages.count
+    @brand_opinions= Opinion.find_all_with_tags_by_brand(:context => @brand.id)
+    @positive_opinion_count=@brand.messages.positives.size
+    @negative_opinion_count=@brand.messages.negatives.size
+
+  end
+
   def validate
     @brand = Brand.find(params[:id])
     change_status @brand, Brand::VALID
@@ -38,7 +48,7 @@ class BrandsController < ApplicationController
     change_status @brand, Brand::INVALID
     render "classify.rjs"
   end
-  
+
   def messages
     @brand = Brand.find(params[:id])
     @positives_messages = @brand.messages.positives
@@ -46,8 +56,9 @@ class BrandsController < ApplicationController
   end
 
 private
-  def change_status(brand, status)  
+  def change_status(brand, status)
     brand.status = status
     brand.save
   end
 end
+
