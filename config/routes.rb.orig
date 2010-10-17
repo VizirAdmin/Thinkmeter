@@ -1,12 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
   map.root :controller => "home", :action => "index"
+<<<<<<< HEAD
   map.brand_validation '/brand_validation', :controller => 'brands_status', :action => 'index'
-  map.brand_messages '/brands/:id/messages' , :controller => 'brands', :action => 'messages'
-  map.resources :brands
-  map.opinion '/ccccc', :controller => 'opinions', :action=> 'index', :opinion=> 'aaa'
-  map.resources :opinions
-  map.resources :expressions  
   map.connect ':controller/:action'
+=======
+  map.resources :brands
+>>>>>>> 1183fe7f1a266acba274a07b4bf4fd9322b0dc29
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end

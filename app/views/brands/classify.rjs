@@ -1,0 +1,1 @@
+page["opinion_#{@opinion.id}"].visual_effect :fade
