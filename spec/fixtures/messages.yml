@@ -88,6 +88,21 @@ multi_world_opinion:
   text: "#ithink brandname multi world opinion"
   status: 0
 
+small_onechar_brand_name:
+  twitter_id: 1234560010
+  from_user: "thinkmeterme"
+  from_user_id: 1
+  language_code: "en"
+  text: "#ithink a opinion"
+  status: 0
+
+small_monochar_brand_name:
+  twitter_id: 1234560011
+  from_user: "thinkmeterme"
+  from_user_id: 1
+  language_code: "en"
+  text: "#ithink kkkkkk opinion"
+  status: 0
 
 # Massa de dados
 message001:

@@ -26,9 +26,16 @@ body {
   background-color:#fff;
   float:left;
   width:72%;
-  clear:left;
   margin:0 0 0 1%;
   padding-top:6px;
+  clear:both;
+  display:block;
+  position:relative;
+}
+
+#tm .clearfix {
+  clear:both;
+  display:block;
 }
 
 #tm #brands_tags{
@@ -142,7 +149,7 @@ text-decoration:underline;
 
 /***** begin - home_chart *****/
 #tm #home_chart{
-  height:200px;
+  height:400px;
   width:72%;
   position:relative;
   margin:2% 0 0 5px;
@@ -290,10 +297,13 @@ table.thinkmeter_stats tbody tr:hover{
   text-decoration:underline;
 }
 
-#content{
+.content{
   text-decoration:none;
   font-family:"Lucida Grande","Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
   font-size:14px;
+  margin:10px;
+  float:left;
+  clear:left;
 }
 
 /***** begin tabs *****/
@@ -407,4 +417,51 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that th
   padding:15px 12px;
   float:left;
 }
+
+
+/* Begin of slideshow elements*/
+.clear {
+	clear:both
+}
+
+#gallery {
+	position:relative;
+	height:360px;
+	display:inline-block;
+    margin-left:180px;
+    margin-top:20px;
+}
+	#gallery a {
+		float:left;
+		position:absolute;
+	}
+	
+	#gallery a img {
+		border:none;
+	}
+	
+	#gallery a.show {
+		z-index:500
+	}
+
+	#gallery .caption {
+		z-index:600; 
+		background-color:#000; 
+		color:#ffffff; 
+		height:100px; 
+		width:100%; 
+		position:absolute;
+		bottom:0;
+	}
+
+	#gallery .caption .content {
+		margin:5px
+	}
+	
+	#gallery .caption .content h3 {
+		margin:0;
+		padding:0;
+		color:#1DCCEF;
+	}
+/* End of slideshow elements*/
 

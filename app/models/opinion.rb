@@ -5,10 +5,25 @@ class Opinion < ActiveRecord::Base
   has_many :brands, :through => :brands_opinions
   has_many :expressions, :dependent => :destroy
   named_scope :unclassified, :conditions => 'classification = -1'
-
+  named_scope :good, :conditions => 'classification = 0'
+  named_scope :bad, :conditions => 'classification = 1'
+  named_scope :validated, :conditions => 'classification in (0,1)'
   UNCLASSIFIED = -1
   GOOD = 0
   BAD = 1
+
+  def self.total_of_brands_with_me(brand_id)
+    find_by_sql(["
+      SELECT count(*) AS count FROM opinions o
+      INNER JOIN messages_opinions mo ON mo.opinion_id = o.id
+      INNER JOIN messages_brands mb ON mb.message_id = mo.message_id
+      WHERE o.id = ?",brand_id
+      ])
+  end
+
+  def self.calc_height(total, opinions)
+    if total > 0;(opinions * 400) / total; else; 200; end
+  end
 
   def self.find_all_with_tags(params={})
     Vizir::ActsAsTag.friendly_tags(find_as_tags_with_context(params[:context]))
