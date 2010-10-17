@@ -24,11 +24,11 @@ class MessageProcessorWorker
         message.trashed = 1
         message.save
       end
-    rescue
-      puts "Error processing message message:#{message.text}"
+    rescue Exception => e
+      puts "Error processing message: \"#{message.text}\", error: #{e}"
       message.status = 3
       message.save
-    end   
+    end 
   end
   
   def associate_opinion_to_brand(message, brand, opinion)

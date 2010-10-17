@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.root :controller => "home", :action => "index"
   map.brand_validation '/brand_validation', :controller => 'brands_status', :action => 'index'
+  map.brand_messages '/brands/:id/messages' , :controller => 'brands', :action => 'messages'
   map.resources :brands
   map.opinion '/ccccc', :controller => 'opinions', :action=> 'index', :opinion=> 'aaa'
   map.resources :opinions

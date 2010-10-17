@@ -1,0 +1,53 @@
+<script type="text/javascript">
+  jQuery(document).ready(function() {
+
+	  //When page loads...
+	  jQuery(".tab_content").hide(); //Hide all content
+	  jQuery("ul.tabs li:first").addClass("active").show(); //Activate first tab
+	  jQuery(".tab_content:first").show(); //Show first tab content
+
+	  //On Click Event
+	  jQuery("ul.tabs li").click(function() {
+
+		  jQuery("ul.tabs li").removeClass("active"); //Remove any "active" class
+		  jQuery(this).addClass("active"); //Add "active" class to selected tab
+		  jQuery(".tab_content").hide(); //Hide all tab content
+
+		  var activeTab = jQuery(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+		  jQuery(activeTab).fadeIn(); //Fade in the active ID content
+		  return false;
+	  });
+
+  });
+</script>
+
+<div id="actual_path">
+  /<%=link_to @brand.name, brands_path(params[:id])%>
+  /<%=link_to "messages", brand_messages_path(params[:id])%>
+</div>
+
+<div id="container"style="width:98%">
+  <ul class="tabs">
+      <li><a href="#tab1">Positives</a></li>
+      <li><a href="#tab2">Negatives</a></li>
+  </ul>
+
+  <div class="tab_container">
+      <div id="tab1" class="tab_content">
+        <%@positives_messages.each do |p_message|%>
+          <p>
+            <%=p_message.text%>
+          </p>
+        <%end%>
+      </div>
+      <div id="tab2" class="tab_content">
+        <%@negatives_messages.each do |n_message|%>
+          <p>
+            <%=n_message.text%>
+          </p>
+        <%end%>
+      </div>
+</div>
+</div>
+
+

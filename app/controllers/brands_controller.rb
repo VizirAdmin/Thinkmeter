@@ -38,6 +38,12 @@ class BrandsController < ApplicationController
     change_status @brand, Brand::INVALID
     render "validate.rjs"
   end
+  
+  def messages
+    @brand = Brand.find(params[:id])
+    @positives_messages = @brand.messages.positives
+    @negatives_messages = @brand.messages.negatives
+  end
 
 private
   def change_status(brand, status)  
