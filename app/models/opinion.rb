@@ -12,7 +12,6 @@ class Opinion < ActiveRecord::Base
   GOOD = 0
   BAD = 1
 
-
   def self.calc_height(total, opinions)
     if total > 0;(opinions * 400) / total; else; 200; end
   end

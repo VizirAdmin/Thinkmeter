@@ -297,10 +297,13 @@ table.thinkmeter_stats tbody tr:hover{
   text-decoration:underline;
 }
 
-#content{
+.content{
   text-decoration:none;
   font-family:"Lucida Grande","Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
   font-size:14px;
+  margin:10px;
+  float:left;
+  clear:left;
 }
 
 /***** begin tabs *****/
