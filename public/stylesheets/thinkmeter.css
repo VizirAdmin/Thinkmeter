@@ -404,3 +404,50 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that th
   float:left;
 }
 
+
+/* Begin of slideshow elements*/
+.clear {
+	clear:both
+}
+
+#gallery {
+	position:relative;
+	height:360px;
+	display:inline-block;
+    margin-left:180px;
+    margin-top:20px;
+}
+	#gallery a {
+		float:left;
+		position:absolute;
+	}
+	
+	#gallery a img {
+		border:none;
+	}
+	
+	#gallery a.show {
+		z-index:500
+	}
+
+	#gallery .caption {
+		z-index:600; 
+		background-color:#000; 
+		color:#ffffff; 
+		height:100px; 
+		width:100%; 
+		position:absolute;
+		bottom:0;
+	}
+
+	#gallery .caption .content {
+		margin:5px
+	}
+	
+	#gallery .caption .content h3 {
+		margin:0;
+		padding:0;
+		color:#1DCCEF;
+	}
+/* End of slideshow elements*/
+

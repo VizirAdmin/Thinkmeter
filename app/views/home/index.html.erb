@@ -1,5 +1,10 @@
 <%=render :partial=> 'what_you_think'%>
 <%= javascript_include_tag '/javascripts/slider.js' %>
+<script>
+  jQuery("#help").fancybox();
+</script>
+
+<a href="/home/help" id="help">help</a>
 <div id="container">
   <div class="title">BRANDS</div>
   <ol class="tag_cloud">
