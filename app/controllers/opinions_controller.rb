@@ -15,19 +15,19 @@ class OpinionsController < ApplicationController
   def positive
     @opinion = Opinion.find(params[:id], :include => [:expressions])
     change_status @opinion, Opinion::GOOD
-    render "validate.rjs"
+    render "classify.rjs"
   end
 
   def negative
     @opinion = Opinion.find(params[:id], :include => [:expressions])
     change_status @opinion, Opinion::BAD
-    render "validate.rjs"
+    render "classify.rjs"
   end
 
   def delete
-    @opinion = Opinion.find(params[:id], :include => [:expressions])
-    @opinion.delete
-    render "validate.rjs"
+    @opinion_id = params[:id]
+    Opinion.delete(@opinion_id)
+    render "delete.rjs"
   end
 
 private

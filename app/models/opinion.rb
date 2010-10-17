@@ -3,7 +3,7 @@ class Opinion < ActiveRecord::Base
   has_many :brands_opinions
   has_many :messages, :through => :messages_opinions
   has_many :brands, :through => :brands_opinions
-  has_many :expressions
+  has_many :expressions, :dependent => :destroy
   named_scope :unclassified, :conditions => 'classification = -1'
 
   UNCLASSIFIED = -1

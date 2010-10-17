@@ -1,1 +1,0 @@
-page["brand_item_#{@brand.id}"].visual_effect :fade
