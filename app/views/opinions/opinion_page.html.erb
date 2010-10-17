@@ -5,9 +5,14 @@
 <div class="stat_number">
   <%=@opinion_count%>
 </div>
-
 <div class="stat_desc">
   tweets with <b><%=@opinion.name%></b>
+</div>
+<div class="stat_number" style="clear:none;">
+  <%=@opinion_brands%>
+</div>
+<div class="stat_desc">
+  brands with <b><%=@opinion.name%></b>
 </div>
   <%
     visualization "opinion_chart", "PieChart", :width => "450",

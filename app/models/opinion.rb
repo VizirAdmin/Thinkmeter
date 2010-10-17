@@ -12,6 +12,15 @@ class Opinion < ActiveRecord::Base
   GOOD = 0
   BAD = 1
 
+  def self.total_of_brands_with_me(brand_id)
+    find_by_sql(["
+      SELECT count(*) AS count FROM opinions o
+      INNER JOIN messages_opinions mo ON mo.opinion_id = o.id
+      INNER JOIN messages_brands mb ON mb.message_id = mo.message_id
+      WHERE o.id = ?",brand_id
+      ])
+  end
+
   def self.calc_height(total, opinions)
     if total > 0;(opinions * 400) / total; else; 200; end
   end
