@@ -8,6 +8,14 @@ class Message < ActiveRecord::Base
   PROCESSING = 1
   PROCESSED = 2
   ERROR = 3
+  
+
+  named_scope :positives, :conditions => "o.classification = #{Opinion::GOOD}",
+      :joins => "INNER JOIN messages_opinions mo ON mo.message_id = messages.id
+                 INNER JOIN opinions o ON o.id = mo.opinion_id"
+  named_scope :negatives, :conditions => "o.classification = #{Opinion::BAD}",
+      :joins => "INNER JOIN messages_opinions mo ON mo.message_id = messages.id
+                 INNER JOIN opinions o ON o.id = mo.opinion_id"
 
   def before_create
     m = Message.first :conditions => ["twitter_id = ?", self.twitter_id]
