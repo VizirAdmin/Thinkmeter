@@ -27,10 +27,10 @@
   %>
 
 
-<div id="stat_painel" style="padding:15px 0px;">
+<div id="stat_painel" style="padding:15px 0 0 0;text-align:left;">
   <div class="title">LAST MESSAGES</div>
   <div id="last_messages">
-    <ul>
+    <ul style="padding:0">
       <%@opinion.messages.each do |message|%>
         <li class="tweet">
           <a href="http://twitter.com/<%= message.from_user%>" target="_blank">

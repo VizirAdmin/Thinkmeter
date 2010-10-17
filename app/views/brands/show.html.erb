@@ -102,7 +102,7 @@
       <div id="tab2" class="tab_content">
         <UL>
         <%@positives_messages.each do |p_message|%>
-          <li class="tweet">
+          <li class="tweet" style="width:700px;float:left;clear:both;">
             <img class="rounded_img" src="<%= p_message.profile_img_url%>" alt="<%= p_message.from_user%> profile" width="36" height="36"></a>
             <b><a href="http://twitter.com/<%= p_message.from_user%>" target="_blank"><%= p_message.from_user%></a>:</b>
             <%=p_message.html_text%>
@@ -112,7 +112,7 @@
       </div>
       <div id="tab3" class="tab_content">
         <%@negatives_messages.each do |n_message|%>
-          <li class="tweet">
+          <li class="tweet" style="width:700px;float:left;clear:both;">
             <img class="rounded_img" src="<%= n_message.profile_img_url%>" alt="<%= n_message.from_user%> profile" width="36" height="36"></a>
             <b><a href="http://twitter.com/<%= n_message.from_user%>" target="_blank"><%= n_message.from_user%></a>:</b>
             <%=n_message.html_text%>
