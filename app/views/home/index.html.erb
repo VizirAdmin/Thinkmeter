@@ -2,9 +2,29 @@
 <%= javascript_include_tag '/javascripts/slider.js' %>
 <script>
   jQuery("#help").fancybox();
+  $(document).ready(function() {
+
+	$("a#single_image").fancybox();
+	$("a#inline").fancybox({
+		'hideOnContentClick': true
+	});
+	$("a.group").fancybox({
+		'transitionIn'	:	'elastic',
+		'transitionOut'	:	'elastic',
+		'speedIn'		:	600,
+		'speedOut'		:	200,
+		'overlayShow'	:	false
+	});
+
+});
+
 </script>
 
 <a href="/home/help" id="help">help</a>
+
+<a id="inline" href="#data">This shows content of element who has id="data"</a>
+<div style="display:none"><div id="data">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div></div>
+
 <div id="container">
   <div class="title">BRANDS</div>
   <ol class="tag_cloud">
@@ -16,7 +36,7 @@
       <%=list_tags(@brands,"brand")%>
     <%end%>
   </ol>
-  <div class="clearfix"></div>  
+  <div class="clearfix"></div>
 </div>
 <div id="right_painel" style="height:500px;">
   <div class="title">STATS</div>
