@@ -40,7 +40,7 @@ class BrandsController < ApplicationController
     if total == 0
       @acceptance =50
     else
-      @acceptance = ((@positive_opinion_count - @negative_opinion_count).to_i.div total) * 50 + 50
+      @acceptance = ((((@positive_opinion_count - @negative_opinion_count).to_i.fdiv total) * 50).div 1)  + 50
     end
   end
 

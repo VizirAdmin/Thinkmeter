@@ -1,17 +1,20 @@
 class Opinion < ActiveRecord::Base
+  
+  # Classification constants
+  UNCLASSIFIED = -1
+  GOOD         = 0
+  BAD          = 1
+  
   has_many :messages_opinions
   has_many :brands_opinions
   has_many :messages, :through => :messages_opinions
   has_many :brands, :through => :brands_opinions
   has_many :expressions, :dependent => :destroy
-  named_scope :unclassified, :conditions => 'classification = -1'
-  named_scope :good, :conditions => 'classification = 0'
-  named_scope :bad, :conditions => 'classification = 1'
-  named_scope :validated, :conditions => 'classification in (0,1)'
-
-  UNCLASSIFIED = -1
-  GOOD = 0
-  BAD = 1
+  
+  named_scope :unclassified, :conditions => "classification = #{Opinion::UNCLASSIFIED}"
+  named_scope :good, :conditions => "classification = #{Opinion::GOOD}"
+  named_scope :bad, :conditions => "classification = #{Opinion::BAD}"
+  named_scope :validated, :conditions => "classification in (#{Opinion::GOOD},#{Opinion::BAD})"
 
   def self.total_of_brands_with_me(brand_id)
     find_by_sql(["

@@ -9,19 +9,13 @@ valid_ithink_message:
   from_user: "thinkmeterme"
   text: "#ithink railsrumble rocks"
   status: 0
-  
-valid_euacho_message:
-  twitter_id: 1234560012
-  from_user: "thinkmeterme"
-  text: "#euacho railsrumble rocks"
-  status: 0
-  
+    
 good_cleo:
   twitter_id: 1234560003
   from_user: "thinkmeterme"
   from_user_id: 1
   language_code: "pt"
-  text: "jksakjhdcjkbcdsa sjsagd #ithink cleopires uma delicia"
+  text: "#ithink cleopires uma delicia"
   status: 0
 
 good_cleo2:
@@ -29,7 +23,7 @@ good_cleo2:
   from_user: "thinkmeterme"
   from_user_id: 1
   language_code: "pt"
-  text: "RT @zzz jksakjhdcjkbcdsa sjsagd #ithink cleopires uma delicia"
+  text: "#ithink cleopires uma delicia"
   status: 0
   
 very_good_cleo:
@@ -37,7 +31,7 @@ very_good_cleo:
   from_user: "thinkmeterme"
   from_user_id: 1
   language_code: "pt"
-  text: "jksakjhdcjkbcdsa sjsagd #ithink cleopires gostosa pra cacete"
+  text: "#ithink cleopires gostosa pra cacete"
   status: 0
 
 bad_locaweb:
@@ -45,7 +39,7 @@ bad_locaweb:
   from_user: "thinkmeterme"
   from_user_id: 1
   language_code: "pt"
-  text: "jksakjhdcjkbcdsa sjsagd #ithink locaweb uma bosta"
+  text: "#ithink locaweb uma bosta"
   status: 0
   
 new_brand_and_opinion:
@@ -53,7 +47,7 @@ new_brand_and_opinion:
   from_user: "thinkmeterme"
   from_user_id: 1
   language_code: "pt"
-  text: "jksakjhdcjkbcdsa sjsagd #ithink patata uma desgraça"
+  text: "#ithink patata uma desgraça"
   status: 0  
 
 mixed_case_names:
@@ -102,6 +96,20 @@ small_monochar_brand_name:
   from_user_id: 1
   language_code: "en"
   text: "#ithink kkkkkk opinion"
+  status: 0
+
+valid_euacho_message:
+  twitter_id: 1234560012
+  from_user: "thinkmeterme"
+  text: "#euacho railsrumble rocks"
+  status: 0
+  
+rt_message:
+  twitter_id: 1234560013
+  from_user: "thinkmeterme"
+  from_user_id: 1
+  language_code: "en"
+  text: "RT @foo #ithink brandname opinion"
   status: 0
 
 # Massa de dados

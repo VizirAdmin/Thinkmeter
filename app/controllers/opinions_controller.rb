@@ -17,6 +17,17 @@ class OpinionsController < ApplicationController
 
   def update
     @opinion = Opinion.find(params[:id], :include => [:expressions])
+    respond_to do |format|
+      if @opinion.update_attributes(params[:opinion])
+        format.html { redirect_to(opinion_url, :notice => I18n.t('evento.atualizacao_realizada')) }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
+      end
+    end
+    
+    #@opinion = Opinion.find(params[:id], :include => [:expressions])
   end
 
   def positive
