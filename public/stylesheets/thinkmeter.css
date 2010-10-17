@@ -13,6 +13,11 @@ body {
   margin:5px 0 5px 1%;
 }
 
+#tm #center_container {
+  margin:0 0 0 13%;
+}
+
+
 /***** begin - container *****/
 #tm #container{
   border-radius:6px 6px 6px 6px;
@@ -42,6 +47,21 @@ body {
   clear:both;
   float:left;
   margin:10px 5px 10px 10px;
+}
+
+#tm #container .tag_cloud a{
+  float:left;
+  color:black;
+  margin:10px 5px 10px 10px;
+  text-decoration:none;
+}
+
+#tm #container .tag_cloud a:hover{
+  float:left;
+  background-color:#ff5745;
+  color:black;
+  margin:10px 5px 10px 10px;
+  text-decoration:none;
 }
 
 /***** end - container *****/
@@ -196,7 +216,7 @@ text-decoration:underline;
 #tm .chart_title{
   background-color:#fff;
   margin:5px 0 0 0;
-  padding:4px;
+  padding:5px 10px 5px 10px;
   width:40px;
   float:left;
   position:absolute;
@@ -212,10 +232,18 @@ text-decoration:underline;
 
 #tm .opinions_tags a:hover{
   float:left;
-  background-color:#ff5745;
   color:#FFFFFF;
   margin:10px 5px 10px 10px;
   text-decoration:none;
+}
+
+#tm #negatives .opinions_tags a:hover{
+  background-color:#ff5745;
+}
+
+#tm #positives .opinions_tags a:hover{
+  background-color:#C3FF68;
+  color:black;
 }
 /***** end - home_chart *****/
 
@@ -430,6 +458,10 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that th
 	display:inline-block;
   margin-left:180px;
   margin-top:20px;
+  padding: 10px;
+  width:580px;
+  -moz-border-radius:6px 6px 6px 6px;
+  -moz-box-shadow:0 1px 2px rgba(51, 51, 51, 0.3);
 }
 	#gallery a {
 		float:left;
