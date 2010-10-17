@@ -26,9 +26,16 @@ body {
   background-color:#fff;
   float:left;
   width:72%;
-  clear:left;
   margin:0 0 0 1%;
   padding-top:6px;
+  clear:both;
+  display:block;
+  position:relative;
+}
+
+#tm .clearfix {
+  clear:both;
+  display:block;
 }
 
 #tm #brands_tags{
@@ -142,7 +149,7 @@ text-decoration:underline;
 
 /***** begin - home_chart *****/
 #tm #home_chart{
-  height:200px;
+  height:400px;
   width:72%;
   position:relative;
   margin:2% 0 0 5px;

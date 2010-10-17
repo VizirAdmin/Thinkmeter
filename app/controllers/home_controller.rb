@@ -8,7 +8,9 @@ class HomeController < ApplicationController
     @messages = Message.last_messages
     @tweet_count=Message.count
     @brand_count=Brand.count
-    @opinion_count=Opinion.count
+    @opinion_count=Opinion.valids.count
+    @positive_chart_height = Opinion.calc_height(@opinion_count, Opinion.good.count)
+    @negative_chart_height = Opinion.calc_height(@opinion_count, Opinion.bad.count)
   end
 
 end

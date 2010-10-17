@@ -5,10 +5,17 @@ class Opinion < ActiveRecord::Base
   has_many :brands, :through => :brands_opinions
   has_many :expressions, :dependent => :destroy
   named_scope :unclassified, :conditions => 'classification = -1'
-
+  named_scope :good, :conditions => 'classification = 0'
+  named_scope :bad, :conditions => 'classification = 1'
+  named_scope :valids, :conditions => 'classification in (0,1)'
   UNCLASSIFIED = -1
   GOOD = 0
   BAD = 1
+
+
+  def self.calc_height(total, opinions)
+    if total > 0;(opinions * 400) / total; else; 200; end
+  end
 
   def self.find_all_with_tags(params={})
     Vizir::ActsAsTag.friendly_tags(find_as_tags_with_context(params[:context]))

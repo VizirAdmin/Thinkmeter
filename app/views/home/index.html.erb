@@ -1,12 +1,11 @@
 <%=render :partial=> 'what_you_think'%>
 <%= javascript_include_tag '/javascripts/slider.js' %>
-<div id="container" style="height:300px;">
+<div id="container">
   <div class="title">BRANDS</div>
-  <div id="brands_tags">
-    <ol class="tag_cloud">
-      <%=list_tags(@brands,"brands")%>
-    </ol>
-  </div>
+  <ol class="tag_cloud">
+    <%=list_tags(@brands,"brands")%>
+  </ol>
+  <div class="clearfix"></div>  
 </div>
 <div id="right_painel" style="height:500px;">
   <div class="title">STATS</div>
@@ -44,16 +43,16 @@
 </div>
 
 <div id="home_chart">
-  <div id="positives" style="height:<%="#{210}"%>px;">
-    <div class="chart_title">70%</div>
+  <div id="positives" style="height:<%="#{@positive_chart_height}"%>px;">
+    <div class="chart_title"><%=@positive_chart_height.div 4%>%</div>
     <div class="opinions_tags">
       <ol class="tag_cloud">
         <%=list_tags(@opinions_positives,"opinion")%>
       </ol>
     </div>
   </div>
-  <div id="negatives" style="height:<%="#{90}"%>px;">
-    <div class="chart_title">30%</div>
+  <div id="negatives" style="height:<%="#{@negative_chart_height}"%>px;">
+    <div class="chart_title"><%=@negative_chart_height.div 4%>%</div>
     <div class="opinions_tags">
       <ol class="tag_cloud">
         <%=list_tags(@opinions_negatives,"opinion")%>
