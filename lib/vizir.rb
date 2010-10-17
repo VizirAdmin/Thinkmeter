@@ -47,6 +47,7 @@ private
   class ActsAsTag
     
     def self.friendly_tags(tags)
+      return [] if tags.empty?
       array = []
       tags.each {|tag| array << {:tag => tag.name,:class => tag_class(tag.total.to_i), :id => tag.id.to_i}}
       array
