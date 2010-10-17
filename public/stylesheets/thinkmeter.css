@@ -14,7 +14,7 @@ body {
 }
 
 #tm #center_container {
-  margin:0 0 0 13%;
+  margin:0 0 0 17%;
 }
 
 
@@ -335,6 +335,7 @@ table.thinkmeter_stats tbody tr:hover{
 
 /***** begin tabs *****/
 ul.tabs {
+  font-family:Impact,Impact5,Charcoal6,sans-serif;
 	margin: 25px 1px 0 0;
 	padding: 0;
 	float: left;
@@ -356,7 +357,7 @@ ul.tabs li {
 	margin-bottom: -1px; /*--Pull the list item down 1px--*/
 	overflow: hidden;
 	position: relative;
-	background: #e0e0e0;
+	background: #C3FF68;
 }
 ul.tabs li a {
 	text-decoration: none;
@@ -376,6 +377,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that th
 }
 
 .tab_container {
+  font-family:Arial;
 	border: 1px solid #999;
 	border-top: none;
 	overflow: hidden;
@@ -405,7 +407,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that th
   bottom:0;
   float:left;
   font-size:12px;
-  margin:10px 0 5px 30%;
+  margin:10px 0 5px 29%;
   position:relative;
   color:#323231;
 }
