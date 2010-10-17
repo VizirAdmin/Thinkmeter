@@ -36,7 +36,7 @@ namespace :ithink do
     desc "Reprocessa mensagens invalidas"
     task :failed do
       puts "Reprocessando mensagens invalidas"
-      Message.update_all("status = 1","status = 3")
+      Message.update_all("status = 0","status = 3")
       n_messages, n_invalid = MessageProcessorWorker.new().perform
       puts "--> #{n_messages} mensagens processadas"
       puts "--> #{n_invalid} mensagens invalidas\n\n"
@@ -44,7 +44,7 @@ namespace :ithink do
     
     task :all do
       puts "Reprocessando todas as mensagens da base de dados"
-      Message.update_all("status = 1")
+      Message.update_all("status = 0")
       BrandsOpinion.destroy_all
       MessagesBrand.destroy_all
       MessagesOpinion.destroy_all

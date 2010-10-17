@@ -1,7 +1,7 @@
 module Parser
   
   class Twitter
-    REGEXP = /^.*\#(ithink|euacho) ([a-zA-Z0-9áàãâéèêíìîòóõôùúçÁÀÃÂÉÈÊÍÌÎÒÓÕÔÙÚÇ\`\~\!\@\#\$\%\^\&\*\(\)\-\_\+\=\{\}\'\<\>\?\/]+) (.*)/
+    REGEXP = /^.*\#(ithink|euacho) ([a-zA-Z0-9áàãâéèêíìîòóõôùúçÁÀÃÂÉÈÊÍÌÎÒÓÕÔÙÚÇ\@][a-zA-Z0-9áàãâéèêíìîòóõôùúçÁÀÃÂÉÈÊÍÌÎÒÓÕÔÙÚÇ\`\~\!\@\#\$\%\^\&\*\(\)\-\_\+\=\{\}\'\<\>\?\/]+) (.*)/
               
     # This characters will be removed from Brand and Option names
     SPECIAL_CHARS_REMOVE = ["&","?"]
