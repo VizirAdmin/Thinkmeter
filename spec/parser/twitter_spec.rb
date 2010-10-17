@@ -56,4 +56,12 @@ describe Parser::Twitter do
     opinion.name.should == "multi world opinion"
   end
   
+  it "should not accept brand names smaller than 2 chars" do
+    Parser::Twitter.parse(messages(:small_onechar_brand_name)).should be_nil
+  end
+  
+  it "should not accept monochar brand names with more than 3 characters" do
+    Parser::Twitter.parse(messages(:small_monochar_brand_name)).should be_nil
+  end
+  
 end
