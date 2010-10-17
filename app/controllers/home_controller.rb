@@ -9,7 +9,6 @@ class HomeController < ApplicationController
     @tweet_count=Message.count
     @brand_count=Brand.count
     @opinion_count=Opinion.count
-
   end
 
 end
