@@ -465,3 +465,13 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that th
 	}
 /* End of slideshow elements*/
 
+a#help {
+  float:right;
+  font-family:Impact,Impact5,Charcoal6,sans-serif;
+  font-size:25px;
+  font-weight:bold;
+  margin:5px 15px;
+  color:#ff5745;text-decoration:none;
+}
+a:hover#help{background-color:#ff5745;color:#FFFFFF;}
+
