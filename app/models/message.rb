@@ -38,7 +38,7 @@ class Message < ActiveRecord::Base
 
   def self.last_messages(params={})
     params = {:quantity => 20}.merge(params)
-    all(:conditions=>"messages.status >= 0",:limit=> params[:quantity], :order => "created_at DESC")
+    all(:conditions=>"messages.status = #{Message::PROCESSED}",:limit=> params[:quantity], :order => "created_at DESC")
   end
 end
 
