@@ -2,21 +2,23 @@ module Parser
   
   class Twitter
     REGEXP = /^.*\#(ithink|euacho) ([a-zA-Z0-9áàãâéèêíìîòóõôùúçÁÀÃÂÉÈÊÍÌÎÒÓÕÔÙÚÇ\@][a-zA-Z0-9áàãâéèêíìîòóõôùúçÁÀÃÂÉÈÊÍÌÎÒÓÕÔÙÚÇ\`\~\!\@\#\$\%\^\&\*\(\)\-\_\+\=\{\}\'\<\>\?\/]+) (.*)/
-              
+    
     # This characters will be removed from Brand and Option names
     SPECIAL_CHARS_REMOVE = ["&","?"]
     
     def Twitter.parse(message)
       match = REGEXP.match(message.text)
-      if !match.nil?
-        return find_brand_by_name(match[2]), find_opinion_by_expression(match[3])
+      if match
+        brand = find_brand_by_name(match[2])
+        opinion = find_opinion_by_expression(match[3])
+        return (brand && opinion ? [brand,opinion] : nil)
       else
-        return nil, nil
+        return nil
       end
     end
     
 private
-    def Twitter.find_brand_by_name(name)
+    def self.find_brand_by_name(name)
       brand = Brand.find_by_name(sanitize(name))
       brand = Brand.new(
         :name => sanitize(name),
@@ -24,12 +26,17 @@ private
         :description => "", 
         :twitter_profile => "", 
         :status => Brand::INITIAL
-      ) if !brand
+      ) if !brand && valid_brand_name?(sanitize(name))
       
       brand
     end
     
-    def Twitter.find_opinion_by_expression(expression)
+    def self.valid_brand_name?(name)
+      name.size > 2 &&
+      (name.size > 3 ? !Regexp.new("^#{name.first}+$").match(name) : true)
+    end
+    
+    def self.find_opinion_by_expression(expression)
       opinion = Opinion.find_by_name(sanitize(expression))
       opinion = Opinion.find_by_expression(expression) if opinion.nil?
       
