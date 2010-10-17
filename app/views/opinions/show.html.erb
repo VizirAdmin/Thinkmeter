@@ -2,6 +2,7 @@
   /<%=link_to "home", root_path%>
   /<%=link_to @opinion.name, opinion_path(params[:id])%>
 </div>
+<div id="center_container">
 <div class="stat_number">
   <%=@opinion_count%>
 </div>
@@ -24,4 +25,23 @@
       chart.add_rows(@opinions_data_for_chart)
     end
   %>
+
+
+<div id="stat_painel">
+  <div class="title">LAST MESSAGES</div>
+  <div id="last_messages">
+    <ul>
+      <%@opinion.messages.each do |message|%>
+        <li class="tweet">
+          <a href="http://twitter.com/<%= message.from_user%>" target="_blank">
+          <img class="rounded_img" src="<%= message.profile_img_url%>" alt="<%= message.from_user%> profile" width="46" height="46"></a>
+          <b><a href="http://twitter.com/<%= message.from_user%>" target="_blank"><%= message.from_user%></a>:</b>
+          <%=message.html_text%>
+        </li>
+      <%end%>
+    </ul>
+  </div>
+
+</div>
+</div>
 
