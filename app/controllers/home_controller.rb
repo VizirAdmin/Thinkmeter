@@ -13,5 +13,8 @@ class HomeController < ApplicationController
     @negative_chart_height = Opinion.calc_height(@opinion_count, Opinion.bad.count)
   end
 
+  def help
+    render "help"
+  end
 end
 
