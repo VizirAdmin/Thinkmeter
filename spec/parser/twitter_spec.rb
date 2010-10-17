@@ -9,19 +9,19 @@ describe Parser::Twitter do
   end
   
   it "should parse #ithink message" do
-    brand, opinion = Parser::Twitter.parse messages(:good_ithink_message)
+    brand, opinion = Parser::Twitter.parse messages(:valid_ithink_message)
     brand.should_not be_nil
     opinion.should_not be_nil
   end
   
   it "should parse #euacho message" do
-    brand, opinion = Parser::Twitter.parse messages(:good_euacho_message)
+    brand, opinion = Parser::Twitter.parse messages(:valid_euacho_message)
     brand.should_not be_nil
     opinion.should_not be_nil
   end
   
   it "should get nil for a wrong formatted message" do
-    brand, opinion = Parser::Twitter.parse messages(:bad_message)
+    brand, opinion = Parser::Twitter.parse messages(:invalid_message)
     brand.should be_nil
     opinion.should be_nil
   end
@@ -48,6 +48,12 @@ describe Parser::Twitter do
     opinion.should_not be_nil
     brand.name.should == "brandwithaccents"
     opinion.name.should == "preatycool"
+  end
+  
+  it "should get only one world for brand name" do
+    brand, opinion = Parser::Twitter.parse messages(:multi_world_opinion)
+    brand.name.should == "brandname"
+    opinion.name.should == "multi world opinion"
   end
   
 end
