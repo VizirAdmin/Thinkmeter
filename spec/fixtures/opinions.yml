@@ -62,12 +62,12 @@ delicia:
 
 deliciosa:
   name: "deliciosa"
-  classification: 0
+  classification: -1
   language_code: "pt"
 
 delicioso:
   name: "delicioso"
-  classification: 0
+  classification: -1
   language_code: "pt"
 
 ruim:
@@ -122,12 +122,12 @@ tosco:
 
 muitotosco:
   name: "muito tosco"
-  classification: 1
+  classification: -1
   language_code: "pt"
 
 tosquissimo:
   name: "tosquissimo"
-  classification: 1
+  classification: -1
   language_code: "pt"
   
   

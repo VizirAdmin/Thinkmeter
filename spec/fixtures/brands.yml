@@ -17,3 +17,24 @@ railsrumble:
   site: ""
   description: ""
   twitter_profile: ""
+
+saopaulo:
+  name: "saopaulo"
+  site: ""
+  description: ""
+  twitter_profile: ""
+  status: 0
+  
+riodejaneiro:
+  name: "riodejaneiro"
+  site: ""
+  description: ""
+  twitter_profile: ""
+  status: 0
+  
+curitiba:
+  name: "curitiba"
+  site: ""
+  description: ""
+  twitter_profile: ""
+  status: 0

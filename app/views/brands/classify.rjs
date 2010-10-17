@@ -1,1 +1,1 @@
-page["opinion_#{@opinion.id}"].visual_effect :fade
+page["brand_item_#{@brand.id}"].visual_effect :fade

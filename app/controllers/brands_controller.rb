@@ -30,13 +30,13 @@ class BrandsController < ApplicationController
   def validate
     @brand = Brand.find(params[:id])
     change_status @brand, Brand::VALID
-    render "validate.rjs"
+    render "classify.rjs"
   end
 
   def invalidate
     @brand = Brand.find(params[:id])
     change_status @brand, Brand::INVALID
-    render "validate.rjs"
+    render "classify.rjs"
   end
   
   def messages
