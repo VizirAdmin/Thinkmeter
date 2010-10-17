@@ -3,7 +3,7 @@ class OpinionsController < ApplicationController
     @opinions = Opinion.unclassified
   end
 
-  def graph_by_tag
+  def opinion_page
     @opinions_data_for_chart = Opinion.get_opinion_per_brands(params[:id].to_i)
   end
   
