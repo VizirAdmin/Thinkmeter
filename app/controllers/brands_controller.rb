@@ -27,7 +27,7 @@ class BrandsController < ApplicationController
 
   end
 
-  def brand_page
+  def show
     @brand = Brand.find(params[:id])
     @brand_data_for_chart = Brand.get_brand_per_opinions(params[:id].to_i)
     @brand_count = @brand.messages.count
