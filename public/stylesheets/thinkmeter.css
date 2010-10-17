@@ -72,27 +72,25 @@ body {
 }
 
 #tm .stat_number{
-  box-shadow: 0 1px 5px #FC9200, inset 0 5px 10px #ffb54c;
-  -o-box-shadow: 0 1px 5px #FC9200, inset 0 5px 10px #ffb54c;
-  -webkit-box-shadow: 0 1px 5px #FC9200, inset 0 5px 10px #ffb54c;
-  -moz-box-shadow: 0 1px 5px #FC9200, inset 0 5px 10px #ffb54c;
-  background-color:#FFB515;
-  margin:10px 2px 5px 10px;
-  padding:4px;
-  width:80px;
+  box-shadow: 0 1px 5px #FFB515, inset 0 5px 10px #FFB515;
+  -o-box-shadow: 0 1px 5px #FFB515, inset 0 5px 10px #FFB515;
+  -webkit-box-shadow: 0 1px 5px #FFB515, inset 0 5px 10px #FFB515;
+  -moz-box-shadow: 0 1px 5px #fff, inset 0 5px 10px #fff;
+  background-color:#fff;
+  margin:10px 0px 5px 10px;
+  padding:5px 10px 5px 10px;
   float:left;
   clear:both;
 }
 
 #tm .stat_desc{
-  box-shadow: 0 1px 5px #FC9200, inset 0 5px 10px #ffb54c;
-  -o-box-shadow: 0 1px 5px #FC9200, inset 0 5px 10px #ffb54c;
-  -webkit-box-shadow: 0 1px 5px #FC9200, inset 0 5px 10px #ffb54c;
-  -moz-box-shadow: 0 1px 5px #FC9200, inset 0 5px 10px #ffb54c;
+  box-shadow: 0 1px 5px #FFB515, inset 0 5px 10px #FFB515;
+  -o-box-shadow: 0 1px 5px #FFB515, inset 0 5px 10px #FFB515;
+  -webkit-box-shadow: 0 1px 5px #FFB515, inset 0 5px 10px #FFB515;
+  -moz-box-shadow: 0 1px 5px 0 #FFB515, inset 0 5px 10px 0 #FFB515;
   background-color:#FFB515;
-  margin:10px 2px 5px 10px;
-  padding:4px;
-  width:80px;
+  margin:10px 0px 5px 0px;
+  padding:5px 10px 5px 10px;
   float:left;
 }
 
@@ -383,7 +381,8 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that th
   clear:both;
   text-align:center;
   background-color:#ff5745;
-  margin:10px 0 25px 10px;
+  margin:20px 0 25px 10px;
   padding:15px 12px;    
+  float:left;
 }
 

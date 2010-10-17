@@ -1,3 +1,13 @@
+<div id="actual_path">
+  /<%=link_to @opinion.name, opinion_page_path(params[:id])%>
+</div>
+<div class="stat_number">
+  <%=@opinion_count%>
+</div>
+
+<div class="stat_desc">
+  tweets with <b><%=@opinion.name%></b>
+</div>
   <%
     visualization "opinion_chart", "PieChart", :width => "450",
                     :height => 300, :title => "'Opinion per Brands'",

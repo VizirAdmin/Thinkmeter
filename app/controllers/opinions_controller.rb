@@ -4,7 +4,9 @@ class OpinionsController < ApplicationController
   end
 
   def opinion_page
+    @opinion = Opinion.find(params[:id])
     @opinions_data_for_chart = Opinion.get_opinion_per_brands(params[:id].to_i)
+    @opinion_count = @opinion.messages.count
   end
   
   def edit
