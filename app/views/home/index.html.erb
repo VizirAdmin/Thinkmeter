@@ -8,7 +8,13 @@
 <div id="container">
   <div class="title">BRANDS</div>
   <ol class="tag_cloud">
-    <%=list_tags(@brands,"brand")%>
+    <%if @brands.empty?%>
+      <p style="float:left;margin-top:20px;clear:left;">
+      Brands weren't find yet.
+      </p>
+    <%else%>
+      <%=list_tags(@brands,"brand")%>
+    <%end%>
   </ol>
   <div class="clearfix"></div>  
 </div>
