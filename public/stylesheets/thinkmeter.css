@@ -368,3 +368,22 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that th
 }
 
 #footer a{color:#323231;text-decoration:none;}
+
+
+#opinion_chart {
+  box-shadow:2px 2px 2px 2px #ff5745;
+  border-radius:6px 6px 6px 6px;
+  -webkit-box-shadow:2px 2px 2px 2px #ff5745;
+  -webkit-border-radius:6px 6px 6px 6px;
+  -o-box-shadow:2px 2px 2px 2px #ff5745;
+  -o-border-radius:6px 6px 6px 6px;
+  -moz-box-shadow:2px 2px 2px 2px #ff5745;
+  -moz-border-radius:6px 6px 6px 6px;
+  width:460px;
+  clear:both;
+  text-align:center;
+  background-color:#ff5745;
+  margin:10px 0 25px 10px;
+  padding:15px 12px;    
+}
+

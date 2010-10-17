@@ -19,7 +19,9 @@
   <body>
   </body>
     <div id ="tm">
-      <img name="Topo" src="/images/logo_tm.png" id="logo"/>
+      <%= link_to (image_tag "/images/logo_tm.png", :alt => "ThinkMeter", 
+          :title =>"ThinkMeter"), root_path, :id => "logo"
+      %>
       <%= yield %>      
     </div>
     <div id ="footer">

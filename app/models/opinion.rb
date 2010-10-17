@@ -13,6 +13,19 @@ class Opinion < ActiveRecord::Base
   def self.find_all_with_tags(params={})
     Vizir::ActsAsTag.friendly_tags(find_as_tags_with_context(params[:context]))
   end
+  
+  def self.get_opinion_per_brands(opinion_id)
+    result = find_by_sql(["
+      SELECT b.name AS name, count(*) AS total FROM opinions o 
+      INNER JOIN messages_opinions mo ON o.id = mo.opinion_id
+      INNER JOIN messages_brands mb ON mb.message_id = mo.message_id
+      INNER JOIN brands b ON b.id = mb.brand_id
+      WHERE o.id = ? group by b.name", opinion_id])
+    @array = []
+    result.each {|r| @array << [r.name,r.total.to_i]}
+    @array
+  end
+  
   # def get_expressions()
   #   words=self.name.split(" ")
   #   my_expressions = []
