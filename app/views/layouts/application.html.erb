@@ -8,6 +8,7 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <%= stylesheet_link_tag :all, :cache => true %>
     <%= stylesheet_tag "/stylesheets/jquery.fancybox-1.3.1.css", :cache => true %>
+    <%= stylesheet_tag "/stylesheets/jquery-ui-1.8.5.custom.css", :cache => true %>
     <%= javascript_include_tag :defaults, "prototype", "application", "control", "effects" %>
     <%= javascript_include_tag '/javascripts/jquery-1.4.2.min.js' %>
     <%= javascript_include_tag '/javascripts/jquery.fancybox-1.3.1.js' %>
@@ -22,14 +23,14 @@
   <body>
   </body>
     <div id ="tm">
-      <%= link_to (image_tag "/images/logo_tm.png", :alt => "ThinkMeter", 
+      <%= link_to (image_tag "/images/logo_tm.png", :alt => "ThinkMeter",
           :title =>"ThinkMeter"), root_path, :id => "logo"
       %>
-      <%= yield %>      
+      <%= yield %>
     </div>
 
     <div id ="footer">
-      ©<%=Time.now.year%> <b>ThinkMeter</b>. All Rights Reserved. Powered by 
+      ©<%=Time.now.year%> <b>ThinkMeter</b>. All Rights Reserved. Powered by
       <b><i><%=link_to "Vizir", "http://www.vizir.com.br"%></i></b> during Rails Rumble 2010.
     </div>
     <script type="text/javascript">

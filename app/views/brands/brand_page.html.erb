@@ -1,3 +1,27 @@
+<script type="text/javascript">
+  jQuery(document).ready(function() {
+
+	  //When page loads...
+	  jQuery(".tab_content").hide(); //Hide all content
+	  jQuery("ul.tabs li:first").addClass("active").show(); //Activate first tab
+	  jQuery(".tab_content:first").show(); //Show first tab content
+
+	  //On Click Event
+	  jQuery("ul.tabs li").click(function() {
+
+		  jQuery("ul.tabs li").removeClass("active"); //Remove any "active" class
+		  jQuery(this).addClass("active"); //Add "active" class to selected tab
+		  jQuery(".tab_content").hide(); //Hide all tab content
+
+		  var activeTab = jQuery(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+		  jQuery(activeTab).fadeIn(); //Fade in the active ID content
+		  return false;
+	  });
+
+  });
+</script>
+
+
 <div id="actual_path">
   /<%=link_to @brand.name, brand_page_path(params[:id])%>
 </div>
@@ -46,13 +70,40 @@
   </table>
 </div>
 
-
 <div id="container" style="height:300px;width:820px;">
-  <div class="title">Opinions for this brand</div>
-  <div id="brands_tags">
-    <ol class="tag_cloud">
-      <%=list_tags(@brand_opinions,"opinion")%>
-    </ol>
-  </div>
+  <ul class="tabs">
+      <li><a href="#tab1">Opinions for this brand</a></li>
+      <li><a href="#tab2">Positive Messages</a></li>
+      <li><a href="#tab3">Negative Messages</a></li>
+  </ul>
+
+  <div class="tab_container">
+    <div id="tab1" class="tab_content">
+        <div id="brands_tags">
+           <ol class="tag_cloud">
+             <%=list_tags(@brand_opinions,"opinion")%>
+          </ol>
+        </div>
+    </div>
+
+      <div id="tab2" class="tab_content">
+        <UL>
+        <%@positives_messages.each do |p_message|%>
+          <li class="tweet">
+            <b><a href="http://twitter.com/<%= p_message.from_user%>" target="_blank"><%= p_message.from_user%></a>:</b>
+            <%=p_message.html_text%>
+          </li>
+        <%end%>
+        </UL>
+      </div>
+      <div id="tab3" class="tab_content">
+        <%@negatives_messages.each do |n_message|%>
+          <li class="tweet">
+            <b><a href="http://twitter.com/<%= n_message.from_user%>" target="_blank"><%= n_message.from_user%></a>:</b>
+            <%=n_message.html_text%>
+          </li>
+        <%end%>
+      </div>
+</div>
 </div>
 
