@@ -1,13 +1,32 @@
-  <%
-    visualization "opinion_chart", "PieChart", :width => "450",
-                    :height => 300, :title => "'Opinion per Brands'",
-                    :vAxis => "{title: ''}",
-                    :hAxis => "{title: ''}",
-                    :legend => "'bottom'",
-                    :html => {:class => "class"} do |chart|
-      chart.string "Brand"
-      chart.number "Mentions"
-      chart.add_rows(@arr)
-    end
-  %>
-
+<ul id="list">
+  <%@opinions.each do |opinion|%>
+    <li id="opinion_<%= opinion.id %>" class="item">
+      <span id="title"> <%= opinion.name%>&nbsp;&nbsp;</span> 
+      <span id="text">
+        Classification:
+        <% if opinion.classification == -1 %>
+              None
+        <% elsif opinion.classification == 1 %>
+              Good
+        <% else %>
+              Bad
+        <% end %>
+        Language:<%= opinion.language_code.size > 0 ? opinion.language_code : 'none'%>, 
+        Expressions:
+          <% if opinion.expressions.size > 0 %>
+            <% opinion.expressions.each do |exp| %>
+              <%= "#{exp.expression}," %>
+            <% end %>
+          <% else %>
+            none
+          <% end%>
+      </span>
+      <div id="commands">
+        <%= link_to "Edit", edit_opinion_path(opinion) %>
+        <%= link_to_remote "Positive", :url => { :controller => "opinions", :action => "positive", :id=> opinion.id} %>
+        <%= link_to_remote "Negative", :url => { :controller => "opinions", :action => "negative", :id=> opinion.id} %>
+        <%= link_to_remote "Delete", :url => { :controller => "opinions", :action => "delete", :id=> opinion.id} %>
+      </div>
+    </li>
+  <%end%>
+</ul>

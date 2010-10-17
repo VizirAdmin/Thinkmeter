@@ -3,6 +3,8 @@ ActionController::Routing::Routes.draw do |map|
   map.brand_validation '/brand_validation', :controller => 'brands_status', :action => 'index'
   map.resources :brands
   map.opinion '/ccccc', :controller => 'opinions', :action=> 'index', :opinion=> 'aaa'
+  map.resources :opinions
+  map.resources :expressions  
   map.connect ':controller/:action'
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'

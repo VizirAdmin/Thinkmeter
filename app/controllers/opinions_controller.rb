@@ -1,5 +1,9 @@
 class OpinionsController < ApplicationController
   def index
+    @opinions = Opinion.unclassified
+  end
+
+  def graph_by_tag
     conn = ActiveRecord::Base.connection
     result=conn.execute("select b.name as name, count(*) as ct
         from opinions o inner join brands_opinions bo on o.id=bo.opinion_id
@@ -18,5 +22,37 @@ class OpinionsController < ApplicationController
       format.xml  { render :xml => @brands }
     end
   end
-end
+  
+  def edit
+    @opinion = Opinion.find(params[:id], :include => [:expressions])
+  end
+  
+  def update
+    @opinion = Opinion.find(params[:id], :include => [:expressions])
 
+  end
+
+  def positive
+    @opinion = Opinion.find(params[:id], :include => [:expressions])
+    change_status @opinion, Opinion::GOOD
+    render "classify.rjs"
+  end
+
+  def negative
+    @opinion = Opinion.find(params[:id], :include => [:expressions])
+    change_status @opinion, Opinion::BAD
+    render "classify.rjs"
+  end
+
+  def delete
+    @opinion_id = params[:id]
+    Opinion.delete(@opinion_id)
+    render "delete.rjs"
+  end
+
+private
+  def change_status(opinion, classification)  
+    opinion.classification = classification
+    opinion.save
+  end
+end
