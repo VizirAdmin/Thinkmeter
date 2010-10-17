@@ -428,8 +428,8 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that th
 	position:relative;
 	height:360px;
 	display:inline-block;
-    margin-left:180px;
-    margin-top:20px;
+  margin-left:180px;
+  margin-top:20px;
 }
 	#gallery a {
 		float:left;
