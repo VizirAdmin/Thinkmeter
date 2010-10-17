@@ -64,4 +64,7 @@ describe Parser::Twitter do
     Parser::Twitter.parse(messages(:small_monochar_brand_name)).should be_nil
   end
   
+  it "should get up to 2 words for opinion expression" do
+  end
+    
 end
