@@ -40,7 +40,7 @@
   <%
     visualization "opinion_chart", "PieChart", :width => "450",
                     :height => 300, :title => "'Brand per Opinions'",
-                    :legend => "'bottom'",
+                    :legend => "'bottom'", :is3D => "true",
                     :html => {:class => "class"} do |chart|
       chart.string "Opinion"
       chart.number "Mentions"
