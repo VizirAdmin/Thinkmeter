@@ -68,6 +68,7 @@ body {
   width:auto;
   clear:both;
   float:left;
+  font-family:Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 #tm .stat_number{
@@ -95,6 +96,8 @@ body {
   float:left;
 }
 
+/** begin - slider_messages **/
+
 #tm #last_messages{
   height: 400px;
   float:left;
@@ -110,6 +113,17 @@ body {
   padding:10px 0 2px 5px;
   display:inline-block;
   width:auto;
+}
+
+#tm .tweet a{
+  color:#3366CC !important;
+  text-decoration:none;
+}
+
+/** end - slider_messages **/
+
+#tm .tweet a:hover{
+text-decoration:underline;
 }
 
 .rounded_img {
@@ -248,6 +262,8 @@ table.thinkmeter_stats{
   font-size:23px;
   cursor:default;
   padding:10px;
+  float:left;
+  clear:both;
 }
 table.thinkmeter_stats td{
   border:none;
@@ -257,7 +273,7 @@ table.thinkmeter_stats td{
 table.thinkmeter_stats tbody tr:hover{
   background:none;
 }
-.stats_count a{
+.stats_count {
   text-decoration:none;
   font-family:"Lucida Grande","Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
   font-size:14px;
