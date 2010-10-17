@@ -66,8 +66,20 @@
         <span class="stats_count">negative</span>
       </span></td>
     </tr>
-  </tbody>
+    </tbody>
   </table>
+<BR><BR><BR><BR><BR>
+<div align=center>
+    <% visualization "gauge_chart", "Gauge", :width => 200, :height => 200, :title => "'brand_acceptance'",
+                      :redFrom => 0, :redTo => 50, :greenFrom => 50, :greenTo => 100,
+                      :html => {:class => ""} do |chart|%>
+        <% chart.string "Label"%>
+        <%chart.number "Value"%>
+        <%value = [["Acceptance", @acceptance]]%>
+        <%chart.add_rows(value)%>
+    <%end %>
+</div>
+
 </div>
 
 <div id="container" style="height:300px;width:820px;">

@@ -36,6 +36,12 @@ class BrandsController < ApplicationController
     @negatives_messages = @brand.messages.negatives
     @positive_opinion_count=@positives_messages.size
     @negative_opinion_count=@negatives_messages.size
+    total = @positive_opinion_count + @negative_opinion_count
+    if total == 0
+      @acceptance =50
+    else
+      @acceptance = (@positive_opinion_count.div total) * 100
+    end
   end
 
   def validate
