@@ -23,8 +23,11 @@
 
 
 <div id="actual_path">
+  /<%=link_to "home", root_path%>
   /<%=link_to @brand.name, brand_page_path(params[:id])%>
 </div>
+
+<div id="center_container">
 <div class="stat_number">
   <%=@brand_count%>
 </div>
@@ -37,9 +40,7 @@
   <%
     visualization "opinion_chart", "PieChart", :width => "450",
                     :height => 300, :title => "'Brand per Opinions'",
-                    :vAxis => "{title: ''}",
-                    :hAxis => "{title: ''}",
-                    :legend => "'bottom'",
+                    :legend => "'bottom'", :is3D => "true",
                     :html => {:class => "class"} do |chart|
       chart.string "Opinion"
       chart.number "Mentions"
@@ -118,6 +119,7 @@
           </li>
         <%end%>
       </div>
-</div>
+    </div>
+  </div>
 </div>
 
