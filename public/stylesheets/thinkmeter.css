@@ -107,23 +107,23 @@ body {
   color:#424242;
   font-family:Arial;
   font-size:12px;
-  padding:10px 0 0px 5px;
+  padding:10px 0 2px 5px;
   display:inline-block;
   width:auto;
 }
 
-.rounded-img2 {
-border-radius:10px 10px 10px 10px;
-box-shadow:0 1px 5px rgba(0, 0, 0, 0.5) inset, 0 1px 0 rgba(255, 255, 255, 0.898), 0 -1px 0 rgba(0, 0, 0, 0.6);
--o-border-radius:10px 10px 10px 10px;
--o-box-shadow:0 1px 5px rgba(0, 0, 0, 0.5) inset, 0 1px 0 rgba(255, 255, 255, 0.898), 0 -1px 0 rgba(0, 0, 0, 0.6);
--webkit-border-radius:10px 10px 10px 10px;
--webkit-box-shadow:0 1px 5px rgba(0, 0, 0, 0.5) inset, 0 1px 0 rgba(255, 255, 255, 0.898), 0 -1px 0 rgba(0, 0, 0, 0.6);
--moz-border-radius:10px 10px 10px 10px;
--moz-box-shadow:0 1px 5px rgba(0, 0, 0, 0.5) inset, 0 1px 0 rgba(255, 255, 255, 0.898), 0 -1px 0 rgba(0, 0, 0, 0.6);
-display:inline-block;
-float:left;
-margin-right:2px;
+.rounded_img {
+  border:10px 10px 10px 10px;
+  box-shadow:0 1px 3px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow:0 1px 3px rgba(0, 0, 0, 0.4);
+  -o-box-shadow:0 1px 3px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow:0 1px 3px rgba(0, 0, 0, 0.4);
+  border:1px solid #000000;
+  display:inline-block;
+  overflow:hidden;
+  float:left;
+  margin:0 2px 2px 2px;
+  padding:2px;
 }
 
 /***** end - right_painel *****/

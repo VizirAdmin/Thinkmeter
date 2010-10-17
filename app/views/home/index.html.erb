@@ -31,6 +31,8 @@
     <ul>
       <%@messages.each do |message|%>
         <li class="tweet">
+          <a href="http://twitter.com/<%= message.from_user%>" target="_blank">
+          <img class="rounded_img" src="<%= message.profile_img_url%>" alt="<%= message.from_user%> profile" width="46" height="46"></a>
           <%=message.html_text%>
         </li>
       <%end%>
