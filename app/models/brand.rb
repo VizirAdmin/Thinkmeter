@@ -17,7 +17,7 @@ private
 
   def self.find_as_tags
     find_by_sql(
-      "SELECT b.name AS name, count(*) AS total
+      "SELECT b.id AS id, b.name AS name, count(*) AS total
        FROM brands b
        INNER JOIN messages_brands mb ON mb.brand_id = b.id
        GROUP BY b.name

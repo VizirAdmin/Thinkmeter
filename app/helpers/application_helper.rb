@@ -3,10 +3,14 @@ module ApplicationHelper
 
   include GoogleVisualization
 
-  def list_tags(tags)
+  def list_tags(tags, type)
     result = ""
     tags.each do |tag|
-      result += "<li class='#{tag[:class]}'>#{tag[:tag]}</li>\n"
+      if type == "opinion"
+        result += "<li class='#{tag[:class]}'>#{link_to tag[:tag], opinion_page_path(tag[:id])}</li>\n"
+      else
+        result += "<li class='#{tag[:class]}'>#{tag[:tag]}</li>\n"        
+      end
     end
     result
   end

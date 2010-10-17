@@ -4,7 +4,7 @@
   <div class="title">BRANDS</div>
   <div id="brands_tags">
     <ol class="tag_cloud">
-      <%=list_tags(@brands)%>
+      <%=list_tags(@brands,"brands")%>
     </ol>
   </div>
 </div>
@@ -48,7 +48,7 @@
     <div class="chart_title">70%</div>
     <div class="opinions_tags">
       <ol class="tag_cloud">
-        <%=list_tags(@opinions_positives)%>
+        <%=list_tags(@opinions_positives,"opinion")%>
       </ol>
     </div>
   </div>
@@ -56,7 +56,7 @@
     <div class="chart_title">30%</div>
     <div class="opinions_tags">
       <ol class="tag_cloud">
-        <%=list_tags(@opinions_negatives)%>
+        <%=list_tags(@opinions_negatives,"opinion")%>
       </ol>
     </div>
   </div>

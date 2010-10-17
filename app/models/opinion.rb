@@ -60,7 +60,7 @@ private
 
   def self.find_as_tags_with_context(context)
     find_by_sql(
-      "SELECT o.name AS name, count(*) AS total
+      "SELECT o.id AS id, o.name AS name, count(*) AS total
        FROM opinions o
        INNER JOIN messages_opinions mo ON mo.opinion_id = o.id
        WHERE o.classification = #{context}

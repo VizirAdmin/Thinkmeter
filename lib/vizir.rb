@@ -48,7 +48,7 @@ private
     
     def self.friendly_tags(tags)
       array = []
-      tags.each {|tag| array << {:tag => tag.name,:class => tag_class(tag.total.to_i)}}
+      tags.each {|tag| array << {:tag => tag.name,:class => tag_class(tag.total.to_i), :id => tag.id.to_i}}
       array
     end
     

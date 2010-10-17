@@ -196,11 +196,19 @@ text-decoration:underline;
   z-index:100;
 }
 
-#tm .opinions_tags{
+#tm .opinions_tags a{
   float:left;
-  clear:both;
   color:#fff;
   margin:10px 5px 10px 10px;
+  text-decoration:none;
+}
+
+#tm .opinions_tags a:hover{
+  float:left;
+  background-color:#ff5745;
+  color:#FFFFFF;
+  margin:10px 5px 10px 10px;
+  text-decoration:none;
 }
 /***** end - home_chart *****/
 
