@@ -1,0 +1,32 @@
+<% form_for opinion do |f|%>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :language_code %><br />
+    <%= f.text_field :language_code %>
+  </p>
+  <p>
+    <%= f.label :classification %><br />
+    <%= f.select :classification, options_for_select({"Not set" => -1, "Positive" => 0, "Negative" => 1}, opinion.classification )%>
+  </p>
+  <p>
+    <%= f.label :expressions %><br />
+    <ul id="expressions_list">
+    <% if opinion.expressions == 0 %>
+     <li>There are no expressions in this opinion, use the form bellow to add.</li>
+    <% end %>
+    <% opinion.expressions.each do |exp| %>
+      <%= render :partial => "expression", :locals => {:exp => exp} %>
+    <% end %>
+    </ul>
+    <div>
+      <%= label_tag "Expression" %><br />
+      <%= text_field_tag "expression" %>
+      <%=link_to_remote "Add expression", :url => { :controller => "expressions", :action => "create"}, :with => "'opinion_id=#{opinion.id}&' + 'expression=' + jQuery('#expression').attr('value')" %>
+    </div>    
+  </p>
+  <%= f.submit "Save" %>
+<% end %>
+

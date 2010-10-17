@@ -1,0 +1,3 @@
+page.insert_html :bottom, :expressions_list, :partial => "opinions/expression", :locals => {:exp => @expression}
+page["expression_#{@expression.id}"].visual_effect :highlight
+
