@@ -1,6 +1,6 @@
 <div id="actual_path">
   /<%=link_to "home", root_path%>
-  /<%=link_to @opinion.name, opinion_page_path(params[:id])%>
+  /<%=link_to @opinion.name, opinion_path(params[:id])%>
 </div>
 <div class="stat_number">
   <%=@opinion_count%>

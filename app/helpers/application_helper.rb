@@ -8,7 +8,7 @@ module ApplicationHelper
     tags.each do |tag|
       case type
         when "opinion"
-          result += "<li class='#{tag[:class]}'>#{link_to tag[:tag], opinion_page_path(tag[:id])}</li>\n"
+          result += "<li class='#{tag[:class]}'>#{link_to tag[:tag], opinion_path(tag[:id])}</li>\n"
         when "brand"
 #          result += "<li class='#{tag[:class]}'>#{tag[:tag]}</li>\n"
           result += "<li class='#{tag[:class]}'>#{link_to tag[:tag], brand_page_path(tag[:id])}</li>\n"
