@@ -458,6 +458,10 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that th
 	display:inline-block;
   margin-left:180px;
   margin-top:20px;
+  padding: 10px;
+  width:580px;
+  -moz-border-radius:6px 6px 6px 6px;
+  -moz-box-shadow:0 1px 2px rgba(51, 51, 51, 0.3);
 }
 	#gallery a {
 		float:left;
