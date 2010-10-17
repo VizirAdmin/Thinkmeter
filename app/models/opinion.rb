@@ -8,6 +8,7 @@ class Opinion < ActiveRecord::Base
   named_scope :good, :conditions => 'classification = 0'
   named_scope :bad, :conditions => 'classification = 1'
   named_scope :validated, :conditions => 'classification in (0,1)'
+
   UNCLASSIFIED = -1
   GOOD = 0
   BAD = 1
