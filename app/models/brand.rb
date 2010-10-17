@@ -32,7 +32,8 @@ private
       INNER JOIN messages_opinions mo ON o.id = mo.opinion_id
       INNER JOIN messages_brands mb ON mb.message_id = mo.message_id
       INNER JOIN brands b ON b.id = mb.brand_id
-      WHERE b.id = ? group by o.name", brand_id])
+      WHERE b.id = ? group by o.name
+      ORDER BY total", brand_id])
     @array = []
     result.each {|r|
     @array << [r.name,r.total.to_i]

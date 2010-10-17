@@ -214,13 +214,12 @@ text-decoration:underline;
 }
 
 #tm .chart_title{
-  background-color:#fff;
-  margin:5px 0 0 0;
-  padding:5px 10px 5px 10px;
-  width:40px;
+  background-color:#FFFFFF;
   float:left;
-  position:absolute;
-  z-index:100;
+  margin:5px 0;
+  padding:5px 10px;
+  position:relative;
+  width:40px;
 }
 
 #tm .opinions_tags a{
