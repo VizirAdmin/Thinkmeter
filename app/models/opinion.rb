@@ -14,7 +14,7 @@ class Opinion < ActiveRecord::Base
   named_scope :unclassified, :conditions => "classification = #{Opinion::UNCLASSIFIED}"
   named_scope :good, :conditions => "classification = #{Opinion::GOOD}"
   named_scope :bad, :conditions => "classification = #{Opinion::BAD}"
-  named_scope :validated, :conditions => "classification in (#{Opinion::GOOD},#{Opinion::GOOD})"
+  named_scope :validated, :conditions => "classification in (#{Opinion::GOOD},#{Opinion::BAD})"
 
   def self.total_of_brands_with_me(brand_id)
     find_by_sql(["
