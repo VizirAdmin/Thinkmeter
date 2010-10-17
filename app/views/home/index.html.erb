@@ -63,7 +63,7 @@
     </div>
   </div>
   <div id="negatives" style="height:<%="#{@negative_chart_height}"%>px;">
-    <div class="chart_title"><%=@negative_chart_height.div 4%>%</div>
+    <div class="chart_title"><%=100 - (@positive_chart_height.div 4)%>%</div>
     <div class="opinions_tags">
       <ol class="tag_cloud">
         <%=list_tags(@opinions_negatives,"opinion")%>
