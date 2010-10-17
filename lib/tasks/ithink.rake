@@ -42,6 +42,7 @@ namespace :ithink do
       puts "--> #{n_invalid} mensagens invalidas\n\n"
     end
     
+    desc "Limpa dados nao classificados e reprocessa todas as mensagens"
     task :all do
       puts "Reprocessando todas as mensagens da base de dados"
       Message.update_all("status = 0")
