@@ -72,7 +72,6 @@ ActiveRecord::Schema.define(:version => 20101016140333) do
 
   create_table "opinions", :force => true do |t|
     t.string   "name"
-    t.string   "expression"
     t.integer  "classification"
     t.string   "language_code"
     t.datetime "created_at"

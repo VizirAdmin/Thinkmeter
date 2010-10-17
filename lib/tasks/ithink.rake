@@ -1,3 +1,4 @@
+$:.push(File.dirname(__FILE__)+'/../../')
 
 require 'rubygems'
 require File.dirname(__FILE__)+'/../../config/environment'
