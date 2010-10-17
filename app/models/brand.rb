@@ -10,7 +10,7 @@ class Brand < ActiveRecord::Base
   named_scope :not_validated, :conditions => 'status = 0'
     
   def self.find_all_with_tags
-    tags = Vizir::ActsAsTag.friendly_tags(find_as_tags)
+    Vizir::ActsAsTag.friendly_tags(find_as_tags)
   end
 
 private

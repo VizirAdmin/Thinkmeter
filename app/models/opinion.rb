@@ -10,6 +10,9 @@ class Opinion < ActiveRecord::Base
   GOOD = 0
   BAD = 1
 
+  def self.find_all_with_tags(params={})
+    Vizir::ActsAsTag.friendly_tags(find_as_tags_with_context(params[:context]))
+  end
   # def get_expressions()
   #   words=self.name.split(" ")
   #   my_expressions = []
@@ -38,5 +41,18 @@ class Opinion < ActiveRecord::Base
   def Opinion.find_by_expression(name)
     expression = Expression.find_by_expression(name, :include => [:opinion])
     expression.nil? ? nil : expression.opinion
+  end
+  
+private
+
+  def self.find_as_tags_with_context(context)
+    find_by_sql(
+      "SELECT o.name AS name, count(*) AS total
+       FROM opinions o
+       INNER JOIN messages_opinions mo ON mo.opinion_id = o.id
+       WHERE o.classification = #{context}
+       GROUP BY o.name
+       ORDER BY total DESC"
+      )
   end
 end

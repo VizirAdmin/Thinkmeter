@@ -1,16 +1,4 @@
-<script type="text/javascript">
-  jQuery(document).ready(function(){
-
-    jQuery(".rounded-img2").load(function() {
-      jQuery(this).wrap(function(){
-        return '<span class="' + jQuery(this).attr('class') + '" style="background:url(' + jQuery(this).attr('src') + ') no-repeat center center; width: ' + jQuery(this).width() + 'px; height: ' + jQuery(this).height() + 'px;" />';
-      });
-      jQuery(this).css("opacity","0");
-    });
-
-  });
-</script>
-
+<%= javascript_include_tag '/javascripts/slider.js' %>
 <div id="container" style="height:300px;">
   <div class="title">BRANDS</div>
   <div id="brands_tags">
@@ -21,30 +9,32 @@
 </div>
 <div id="right_painel" style="height:500px;">
   <div class="title">STATS</div>
-  <BR>
   <table class="thinkmeter_stats">
-  <tbody>
-  <tr>
-    <td>
-      <%=@tweet_count%>
-      <span class="stats_count"><a href="" target="blank">tweets</a></span>
-    </td>
-    <td>
-      <%=@brand_count%>
-      <span class="stats_count"><a href="" target="blank">brands</a></span>
-    </td>
-    <td>
-      <%=@opinion_count%>
-      <span class="stats_count"><span class="stats_count"><a href="" target="blank">opinions</a></span>
-    </span></td>
-  </tr>
-</tbody></table>
+    <tbody>
+    <tr>
+      <td>
+        <%=@tweet_count%>
+        <span class="stats_count">tweets</span>
+      </td>
+      <td>
+        <%=@brand_count%>
+        <span class="stats_count">brands</span>
+      </td>
+      <td>
+        <%=@opinion_count%>
+        <span class="stats_count">opinions</span>
+      </span></td>
+    </tr>
+  </tbody>
+  </table>
+  <div class="title">LAST MESSAGES</div>
   <div id="last_messages">
     <ul>
       <%@messages.each do |message|%>
         <li class="tweet">
           <a href="http://twitter.com/<%= message.from_user%>" target="_blank">
-          <img class="rounded-img2" src="<%= message.profile_img_url%>" alt="<%= message.from_user%> profile" width="50" height="50"></a>
+          <img class="rounded_img" src="<%= message.profile_img_url%>" alt="<%= message.from_user%> profile" width="46" height="46"></a>
+          <b><a href="http://twitter.com/<%= message.from_user%>" target="_blank"><%= message.from_user%></a>:</b>
           <%=message.html_text%>
         </li>
       <%end%>

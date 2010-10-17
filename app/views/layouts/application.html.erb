@@ -9,14 +9,14 @@
     <%= javascript_include_tag :defaults, "prototype", "application", "control", "effects" %>
     <%= javascript_include_tag '/javascripts/jquery-1.4.2.min.js' %>
     <%= javascript_include_tag '/javascripts/jcarousellite_1.0.1.min.js' %>
-    <%= javascript_include_tag '/javascripts/slider.js' %>
     <script>
       jQuery.noConflict();
     </script>
   <body>
   </body>
-    <img name="Topo" src="/images/logo_tm.png" id="logo"/>
     <div id ="tm">
+      <img name="Topo" src="/images/logo_tm.png" id="logo"/>
       <%= yield %>
     </div>
 </html>
+
