@@ -32,9 +32,10 @@ class BrandsController < ApplicationController
     @brand_data_for_chart = Brand.get_brand_per_opinions(params[:id].to_i)
     @brand_count = @brand.messages.count
     @brand_opinions= Opinion.find_all_with_tags_by_brand(:context => @brand.id)
-    @positive_opinion_count=@brand.messages.positives.size
-    @negative_opinion_count=@brand.messages.negatives.size
-
+    @positives_messages = @brand.messages.positives
+    @negatives_messages = @brand.messages.negatives
+    @positive_opinion_count=@positives_messages.size
+    @negative_opinion_count=@negatives_messages.size
   end
 
   def validate
