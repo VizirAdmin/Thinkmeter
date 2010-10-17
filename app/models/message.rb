@@ -8,7 +8,6 @@ class Message < ActiveRecord::Base
   PROCESSING = 1
   PROCESSED = 2
   ERROR = 3
-  
 
   named_scope :positives, :conditions => "o.classification = #{Opinion::GOOD}",
       :joins => "INNER JOIN messages_opinions mo ON mo.message_id = messages.id

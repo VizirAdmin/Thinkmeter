@@ -7,6 +7,7 @@ gem "syntax", "1.0.0"
 gem "rspec", "1.3.0"
 gem "rspec-rails", "1.3.2"
 gem "brazilian-rails", "2.1.13"
+gem "ruby-debug", "0.10.3"
 
 group :development do
 end

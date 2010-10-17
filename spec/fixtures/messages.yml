@@ -3,11 +3,16 @@ bad_message:
   text: "I need me a lil boo...#ithink*** yes!"
   status: 0
   
-good_message:
+good_ithink_message:
   twitter_id: 1234560002
   text: "#ithink railsrumble rocks"
   status: 0
-
+  
+good_euacho_message:
+  twitter_id: 1234560012
+  text: "#euacho railsrumble rocks"
+  status: 0
+  
 good_cleo:
   twitter_id: 1234560003
   from_user: "aaa"

@@ -2,7 +2,7 @@ module Parser
   
   class Twitter
     # TODO parametrizar ou aceitar varios tokens: #ithink, #euacho etc
-    REGEXP = /^.*\#ithink ([a-zA-Z0-9áàãâéèêíìîòóõôùúçÁÀÃÂÉÈÊÍÌÎÒÓÕÔÙÚÇ
+    REGEXP = /^.*\#(ithink|euacho) ([a-zA-Z0-9áàãâéèêíìîòóõôùúçÁÀÃÂÉÈÊÍÌÎÒÓÕÔÙÚÇ
               \`\~\!\@\#\$\%\^\&\*\(\)\-\_\+\=\{\}\'\<\>\?\/]+) (.*)/
     
     # This characters will be removed from Brand and Option names
@@ -11,7 +11,7 @@ module Parser
     def Twitter.parse(message)
       match = REGEXP.match(message.text)
       if !match.nil?
-        return find_brand_by_name(match[1]), find_opinion_by_expression(match[2])
+        return find_brand_by_name(match[2]), find_opinion_by_expression(match[3])
       else
         return nil, nil
       end

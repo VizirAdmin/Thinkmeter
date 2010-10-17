@@ -26,7 +26,17 @@ namespace :ithink do
   
   desc "Processa mensagens pendentes"
   task :process do
-    MessageProcessorWorker.new().perform
+    n_messages = MessageProcessorWorker.new().perform
+    puts "#{n_messages} processadas"
+  end
+  
+  namespace :reprocess do
+    desc "Reprocessa mensagens com erro"
+    task :failed do
+      Message.update_all("status = 1","status = 3")
+      n_messages = MessageProcessorWorker.new().perform
+      puts "#{n_messages} processadas"
+    end
   end
 
 end

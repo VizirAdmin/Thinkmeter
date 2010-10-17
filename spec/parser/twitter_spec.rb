@@ -8,16 +8,22 @@ describe Parser::Twitter do
     true.should be_true
   end
   
+  it "should parse #ithink message" do
+    brand, opinion = Parser::Twitter.parse messages(:good_ithink_message)
+    brand.should_not be_nil
+    opinion.should_not be_nil
+  end
+  
+  it "should parse #euacho message" do
+    brand, opinion = Parser::Twitter.parse messages(:good_euacho_message)
+    brand.should_not be_nil
+    opinion.should_not be_nil
+  end
+  
   it "should get nil for a wrong formatted message" do
     brand, opinion = Parser::Twitter.parse messages(:bad_message)
     brand.should be_nil
     opinion.should be_nil
-  end
-  
-  it "should get a brand and opinion for a well formatted message" do
-    brand, opinion = Parser::Twitter.parse messages(:good_message)
-    brand.should_not be_nil
-    opinion.should_not be_nil
   end
   
   it "should sanitize mixed case names" do
