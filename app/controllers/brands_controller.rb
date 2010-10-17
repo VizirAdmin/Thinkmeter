@@ -27,7 +27,7 @@ class BrandsController < ApplicationController
 
   end
 
-  def brand_page
+  def show
     @brand = Brand.find(params[:id])
     @brand_data_for_chart = Brand.get_brand_per_opinions(params[:id].to_i)
     @brand_count = @brand.messages.count
@@ -40,7 +40,7 @@ class BrandsController < ApplicationController
     if total == 0
       @acceptance =50
     else
-      @acceptance = (@positive_opinion_count.div total) * 100
+      @acceptance = ((((@positive_opinion_count - @negative_opinion_count).to_i.fdiv total) * 50).div 1)  + 50
     end
   end
 
