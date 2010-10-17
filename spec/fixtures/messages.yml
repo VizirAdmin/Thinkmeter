@@ -1,21 +1,24 @@
-bad_message:
+invalid_message:
   twitter_id: 1234560001
+  from_user: "thinkmeterme"
   text: "I need me a lil boo...#ithink*** yes!"
   status: 0
   
-good_ithink_message:
+valid_ithink_message:
   twitter_id: 1234560002
+  from_user: "thinkmeterme"
   text: "#ithink railsrumble rocks"
   status: 0
   
-good_euacho_message:
+valid_euacho_message:
   twitter_id: 1234560012
+  from_user: "thinkmeterme"
   text: "#euacho railsrumble rocks"
   status: 0
   
 good_cleo:
   twitter_id: 1234560003
-  from_user: "aaa"
+  from_user: "thinkmeterme"
   from_user_id: 1
   language_code: "pt"
   text: "jksakjhdcjkbcdsa sjsagd #ithink cleopires uma delicia"
@@ -23,7 +26,7 @@ good_cleo:
 
 good_cleo2:
   twitter_id: 2234560000
-  from_user: "aaa"
+  from_user: "thinkmeterme"
   from_user_id: 1
   language_code: "pt"
   text: "RT @zzz jksakjhdcjkbcdsa sjsagd #ithink cleopires uma delicia"
@@ -31,7 +34,7 @@ good_cleo2:
   
 very_good_cleo:
   twitter_id: 2234560001
-  from_user: "zzz"
+  from_user: "thinkmeterme"
   from_user_id: 1
   language_code: "pt"
   text: "jksakjhdcjkbcdsa sjsagd #ithink cleopires gostosa pra cacete"
@@ -39,7 +42,7 @@ very_good_cleo:
 
 bad_locaweb:
   twitter_id: 1234560004
-  from_user: "bbb"
+  from_user: "thinkmeterme"
   from_user_id: 1
   language_code: "pt"
   text: "jksakjhdcjkbcdsa sjsagd #ithink locaweb uma bosta"
@@ -47,7 +50,7 @@ bad_locaweb:
   
 new_brand_and_opinion:
   twitter_id: 1234560005
-  from_user: "ccc"
+  from_user: "thinkmeterme"
   from_user_id: 1
   language_code: "pt"
   text: "jksakjhdcjkbcdsa sjsagd #ithink patata uma desgraça"
@@ -55,7 +58,7 @@ new_brand_and_opinion:
 
 mixed_case_names:
   twitter_id: 1234560006
-  from_user: "bbb"
+  from_user: "thinkmeterme"
   from_user_id: 1
   language_code: "en"
   text: "#ithink MixedCaseBrandName PreatyCool"
@@ -63,7 +66,7 @@ mixed_case_names:
   
 special_chars_names:
   twitter_id: 1234560007
-  from_user: "bbb"
+  from_user: "thinkmeterme"
   from_user_id: 1
   language_code: "en"
   text: "#ithink special&chars?brandname preaty&cool"
@@ -71,10 +74,18 @@ special_chars_names:
 
 names_with_accents:
   twitter_id: 1234560008
-  from_user: "bbb"
+  from_user: "thinkmeterme"
   from_user_id: 1
   language_code: "en"
   text: "#ithink brãndwithácçénts préatyçôõl"
+  status: 0
+  
+multi_world_opinion:
+  twitter_id: 1234560009
+  from_user: "thinkmeterme"
+  from_user_id: 1
+  language_code: "en"
+  text: "#ithink brandname multi world opinion"
   status: 0
 
 

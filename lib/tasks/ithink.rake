@@ -13,7 +13,7 @@ namespace :ithink do
   desc "Realiza a busca no Twitter"
   task :search do
     sw=SearchWorker.new
-    puts "Vai procurar no Twitter"
+    puts "Buscando novas mensagens no Twitter"
     log=Searchlog.new
     log.date_start = Time.now
     total = sw.add_search_to_database
@@ -21,21 +21,38 @@ namespace :ithink do
     log.rc=0
     log.count = total
     log.save
-    puts "Encontrou #{total} registros"
+    puts "--> #{total} mensagens encontradas\n\n"
   end
   
   desc "Processa mensagens pendentes"
   task :process do
-    n_messages = MessageProcessorWorker.new().perform
-    puts "#{n_messages} processadas"
+    puts "Processando novas mensagens"
+    n_messages, n_invalid = MessageProcessorWorker.new().perform
+    puts "--> #{n_messages} mensagens processadas"
+    puts "--> #{n_invalid} mensagens invalidas\n\n"
   end
   
   namespace :reprocess do
-    desc "Reprocessa mensagens com erro"
+    desc "Reprocessa mensagens invalidas"
     task :failed do
+      puts "Reprocessando mensagens invalidas"
       Message.update_all("status = 1","status = 3")
-      n_messages = MessageProcessorWorker.new().perform
-      puts "#{n_messages} processadas"
+      n_messages, n_invalid = MessageProcessorWorker.new().perform
+      puts "--> #{n_messages} mensagens processadas"
+      puts "--> #{n_invalid} mensagens invalidas\n\n"
+    end
+    
+    task :all do
+      puts "Reprocessando todas as mensagens da base de dados"
+      Message.update_all("status = 1")
+      BrandsOpinion.destroy_all
+      MessagesBrand.destroy_all
+      MessagesOpinion.destroy_all
+      Brand.destroy_all
+      Opinion.destroy_all
+      n_messages, n_invalid = MessageProcessorWorker.new().perform
+      puts "--> #{n_messages} mensagens processadas"
+      puts "--> #{n_invalid} mensagens invalidas"
     end
   end
 

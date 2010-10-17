@@ -5,10 +5,13 @@ class MessageProcessorWorker
   def perform
     Message.update_all("status = 1","status = 0")
     messages = Message.find_all_by_status(1)
+    invalid_message_counter = 0
     
     messages.each do |message|
       begin
         process_message(message)
+        invalid_message_counter += 1 if message.status == Message::ERROR
+        
       rescue Exception => e
         puts "Error processing message: \"#{message.text}\", error: #{e}"
         message.status = Message::ERROR
@@ -16,12 +19,12 @@ class MessageProcessorWorker
       end
     end
     
-    Message.update_all("status = 2","status = 1")
-    messages.size
+    [messages.size, invalid_message_counter]
   end
 
   def process_message(message)
     brand, opinion = Parser::Twitter.parse(message)
+
     if opinion && brand
       opinion.messages << message
       opinion.save
@@ -30,14 +33,15 @@ class MessageProcessorWorker
       brand.messages << message
       brand.save
       
+      message.status = Message::PROCESSED
       #opinion.save
       #associate_opinion_to_brand(message, brand, opinion)
     else
-      puts "Invalid message: \"#{message.text}\" (brand: #{brand}, opinion: #{opinion})"
       message.status = Message::ERROR
       #message.trashed = 1
-      message.save
     end
+    
+    message.save
   end
   
   # def associate_opinion_to_brand(message, brand, opinion)
